@@ -52,7 +52,9 @@
 //         URL: api.openweathermap.org
 // Giphy Key: i5u86hxDFgUmIDDbuFDZ6vsL4wBLI8B6
 //      URL: api.giphy.com
+
 $( document ).ready(function(){
+
     var config = {
         apiKey: "AIzaSyBFvIwDGuvgIoxHnmSgUzbAmzW8gvpnxKo",
         authDomain: "melos-71bca.firebaseapp.com",
@@ -62,6 +64,7 @@ $( document ).ready(function(){
         messagingSenderId: "197405510515"
       };
       firebase.initializeApp(config);
+
     
 
 //=====================AJAX Setup=========================//
@@ -84,6 +87,9 @@ $.ajax({
 })
 
 
+
+        var database = firebase.database();
+
     
         //store weather data locally using firebase
         $(".btn-primary").on("click", function(event){
@@ -92,13 +98,15 @@ $.ajax({
             event.preventDefault();
             var zipCode = $("#postal-code").val();
             $("#postal-code").html("")
-            localStorage.clear();
-            localStorage.setItem("zipcode", zipCode);
-            
+            database.ref().set({"zipcode": zipCode});
+            console.log(zipCode)
         });
         //hit spotify api
         //GET user authentication
         //hit face recog
         //store data locally
         //recommend music based on 3 data inputs
-    })
+
+
+})
+        

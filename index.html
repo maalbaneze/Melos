@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS and js -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <!-- CSS files-->
     <link rel="stylesheet" type="text/css" media="screen" href="reset.css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <script src="apis.js"></script>
 
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
@@ -31,7 +31,7 @@
 
         <div class="container">
             <h1 class="display-4">Melos...</h1>
-            <p class="lead">Your music source for your tastes, your mood, and your weather.</p>
+            <p class="lead">Your music source based on your tastes, your mood, and your weather!</p>
         </div>
 
     </div>
@@ -42,7 +42,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
-                    <div class="card-header">Login</div>
+                    <div class="card-header text-white bg-dark"><b>Login</b></div>
                     <div class="card-body">
                         <form>
                             <div class="form-group">
@@ -75,7 +75,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
-                    <div class="card-header">Music Preferences</div>
+                    <div class="card-header text-white bg-info"><b>Music Preferences</b></div>
                     <div class="card-body">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rock"
@@ -109,7 +109,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
-                    <div class="card-header">Weather Preferences</div>
+                    <div class="card-header text-white bg-primary"><b>Weather Preferences</b></div>
                     <div class="card-body">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="clear-sunny"
@@ -148,7 +148,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
-                    <div class="card-header">Current Mood</div>
+                    <div class="card-header text-black bg-light"><b>Current Mood</b></div>
                     <div class="card-body">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="great"
@@ -176,12 +176,17 @@
         </div>
     </div>
 
+    <!-- User link to face recogntiton app -->
+
+
+
+
     <!-- User current location-->
     <div class=container id="user-location">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="max-width: 24rem;">
                 <div class="card mb-4">
-                    <div class="card-header">Current Location</div>
+                    <div class="card-header text-center text-white bg-secondary"><b>Current Location</b></div>
                     <div class="card-body">
                         <div id="country">
                             <label>Country</label>
@@ -203,7 +208,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
-                    <div class="card-header">Cureent Playlist</div>
+                    <div class="card-header text-white bg-primary"><strong>Current Playlist</strong></div>
                     <div class="card-body">
                     </div>
                 </div>
@@ -215,9 +220,9 @@
 
     <div class=container id="start-session">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="max-width: 28rem;">
                 <div class="card mb-4">
-                    <div class="card-header">Accept or Reject</div>
+                    <div class="card-header text-center text-black bg-warning"><b>Accept or Reject</b></div>
                     <div class="card-body">
                         <input class="btn btn-success" type="button" value="Accept and Play">
                         <input class="btn btn-danger" type="submit" value="Reject and get a New Playlist">
@@ -231,9 +236,9 @@
 
     <div class=container id="during-play">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="max-width: 18rem;">
                 <div class="card mb-4">
-                    <div class="card-header">Play, Pause or End Playlist</div>
+                    <div class="card-header text-center text-white bg-success"><b>Play, Pause or End Playlist</b></div>
                     <div class="card-body">
                         <input class="btn btn-success" type="button" value="Start">
                         <input class="btn btn-primary" type="submit" value="Pause">
@@ -244,6 +249,8 @@
 
         </div>
     </div>
+
+
 
     <!-- Script (not sure this is the best bname for our script) -->
     <script src="apis.js"></script>

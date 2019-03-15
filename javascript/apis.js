@@ -49,7 +49,7 @@ $ajax({
 
 
 //=================EVent Listener======================//
-$()var queryURL = "api.openweathermap.org/data/2.5/forecast?zip="+zipcode+","+country+"api=8caea81085fc66df0fb0c7d61c6772b8"
+var queryURL = "api.openweathermap.org/data/2.5/forecast?zip="+zipcode+","+country+"api=8caea81085fc66df0fb0c7d61c6772b8"
 $ajax({
     url:queryURL,
 method:"GET"

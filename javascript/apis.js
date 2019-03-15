@@ -28,11 +28,12 @@
 
 
 //=====================Setup=========================//
-var queryURL = "api.openweathermap.org/data/2.5/forecast?zip="+ zipcode +",us&api=8caea81085fc66df0fb0c7d61c6772b8"
+var zipcode= $('#postal-code').val();
+var queryURL = "https://api.openweathermap.org/data/2.5/forecast?zip="+ zipcode +",us&appid=8caea81085fc66df0fb0c7d61c6772b8"
 $.ajax({
     url: queryURL,
     method: "GET",
-var zipcode= $('#postal-code').val();
+
 
 }).then(function (response) {
     console.log(response)

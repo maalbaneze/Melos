@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Melos...Music for Your Mood</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="apis.js"></script>
+</head>
+
+<body>
+
+    <!-- Page header -->
+    <div class="jumbotron jumbotron-fluid">
+
+        <div class="container">
+            <h1 class="display-4">Melos...</h1>
+            <p class="lead">Your music source for your tastes, your mood, and your weather.</p>
+        </div>
+
+    </div>
+
+    <!-- User account login form -->
+
+    <div class=container>
+
+        <h4>User Login</h4>
+
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="user-password" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="remember-me">
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+    <!-- User music preferences form -->
+
+    <div class=container>
+
+        <h4>Music Preferences</h4>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rock" value="option1">
+            <label class="form-check-label" for="rock">Rock</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="R&B" value="option2">
+            <label class="form-check-label" for="R&B">R&B</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="hip-hop" value="option3">
+            <label class="form-check-label" for="hip-hop">HipHop</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="jazz" value="option4">
+            <label class="form-check-label" for="jazz">Jazz</label>
+        </div>
+
+    </div>
+
+    <!-- User weather inputs (likes/dislikes) form -->
+
+    <div class=container>
+
+        <h4>Weather Preferences</h4>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="clear-sunny" value="option1">
+            <label class="form-check-label" for="clear-sunny">Clear and Sunny</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="overcast" value="option2">
+            <label class="form-check-label" for="overcast">Overcast</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cloudy" value="option3">
+            <label class="form-check-label" for="cloudy">Cloudy</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="stormy" value="option4">
+            <label class="form-check-label" for="stormy">Stormy</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="snow" value="option5">
+            <label class="form-check-label" for="snow">Snow</label>
+        </div>
+
+    </div>
+
+    <!-- User current mood form -->
+
+    <div class=container>
+        <h4>Current Mood</h4>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="great" value="option1">
+            <label class="form-check-label" for="great">Feeling great!</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ok" value="option2">
+            <label class="form-check-label" for="ok">I'm okay</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="blah" value="option3">
+            <label class="form-check-label" for="blah">Got the blahs</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="bummed" value="option4">
+            <label class="form-check-label" for="bummed">Bummed out</label>
+        </div>
+    </div>
+
+    <!-- User current location-->
+    <div class=container id="user-location">
+        <h4>Current Location</h4>
+        <div id="country">
+            <label>Country</label>
+            <input id="country-input" type="text" tabindex="3" name="country">
+        </div>
+        <div id="city">
+            <label>City</label>
+            <input id="city-input" type="text" tabindex="3" name="city">
+        </div>
+    </div>
+    <!-- User buttons to accept and play, or reject playlist and get a new one -->
+
+    <div class=container id="start-session">
+
+        <input class="btn btn-success" type="button" value="Accept and Play">
+        <input class="btn btn-danger" type="submit" value="Reject and get a New Playlist">
+    </div>
+
+    <!-- User Start, Pause, and End buttons -->
+
+    <div class=container id="during-play">
+
+        <input class="btn btn-success" type="button" value="Start">
+        <input class="btn btn-primary" type="submit" value="Pause">
+        <input class="btn btn-dark" type="reset" value="End">
+    </div>
+
+</body>
+
+</html>

@@ -193,6 +193,7 @@
                             <img src="..." class="mr-3" alt="...">
                             <div class="media-body">
                                 <h4 class="mt-0 text-left">Mood Recognition Check</h4>
+                                <br>
                                 <p>This application uses your
                                     face to
                                     detect
@@ -221,17 +222,13 @@
     <!-- User current location-->
     <div class=container id="user-location">
         <div class="row">
-            <div class="col-md-12" style="max-width: 24rem;">
+            <div class="col-md-12" style="max-width: 18rem;">
                 <div class="card mb-4">
                     <div class="card-header text-center text-white bg-secondary"><b>Current Location</b></div>
                     <div class="card-body">
                         <div id="country">
-                            <label>Country</label>
-                            <input id="country-input" type="text" tabindex="3" name="country">
-                        </div>
-                        <div id="city">
-                            <label>City</label>
-                            <input id="city-input" type="text" tabindex="3" name="city">
+                            <label>Zip or Postal Code</label>
+                            <input id="postal-code" type="input" class="form-control" name="postal-code">
                         </div>
                     </div>
                 </div>
@@ -239,7 +236,7 @@
         </div>
     </div>
 
-    <!-- Playlist goes here ONLY when generated -->
+    <!-- Playlist goes here ONLY WHEN GENERATED -->
 
     <div class=container id="play-list">
         <div class="row">
@@ -253,7 +250,7 @@
         </div>
     </div>
 
-    <!-- User buttons to accept and play, or reject playlist and get a new one -->
+    <!-- User buttons to accept and play, or reject playlist and get a new one ONLY SHOWN AFTER PLAYLIST IS GENERATED -->
 
     <div class=container id="start-session">
         <div class="row">
@@ -269,7 +266,7 @@
         </div>
     </div>
 
-    <!-- User Start, Pause, and End buttons -->
+    <!-- User Start, Pause, and End buttons ONLY SHOWN AFTER PLAYLIST IS GENERATED-->
 
     <div class=container id="during-play">
         <div class="row">
@@ -290,11 +287,8 @@
 
 
     <!-- Script (not sure this is the best bname for our script) -->
-<<<<<<< HEAD
     <script src="./javascript/apis.js"></script>
-=======
     <script src="javascript/apis.js"></script>
->>>>>>> ee3ac787a3528dc1cc2fbc4b532906410cb3fe96
 
 </body>
 

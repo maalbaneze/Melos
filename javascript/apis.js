@@ -28,10 +28,11 @@
 
 
 //=====================Setup=========================//
-var queryURL = "api.openweathermap.org/data/2.5/forecast?zip=" + zipcode + "," + country + "api=8caea81085fc66df0fb0c7d61c6772b8"
-$ajax({
+var queryURL = "api.openweathermap.org/data/2.5/forecast?zip="+ zipcode +",us&api=8caea81085fc66df0fb0c7d61c6772b8"
+$.ajax({
     url: queryURL,
-    method: "GET"
+    method: "GET",
+var zipcode= $('#postal-code').val();
 
 }).then(function (response) {
     console.log(response)
@@ -49,11 +50,9 @@ $ajax({
 
 
 //=================EVent Listener======================//
-var queryURL = "api.openweathermap.org/data/2.5/forecast?zip="+zipcode+","+country+"api=8caea81085fc66df0fb0c7d61c6772b8"
-$ajax({
-    url:queryURL,
-method:"GET"
 
-}).then(function(response){
-    console.log(response)
-})
+
+
+
+    
+

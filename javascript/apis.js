@@ -4,7 +4,7 @@
 //         URL: api.openweathermap.org
 // Giphy Key: i5u86hxDFgUmIDDbuFDZ6vsL4wBLI8B6
 //      URL: api.giphy.com
-$(document).ready(function () { }
+$(document).ready(function () {
     var config = {
   apiKey: "AIzaSyBFvIwDGuvgIoxHnmSgUzbAmzW8gvpnxKo",
   authDomain: "melos-71bca.firebaseapp.com",
@@ -43,3 +43,4 @@ if (navigator.mediaDevices.getUserMedia) {
         //store data locally
         //recommend music based on 3 data inputs
 
+});

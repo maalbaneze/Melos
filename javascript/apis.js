@@ -65,9 +65,10 @@ $( document ).ready(function(){
     
 
 //=====================AJAX Setup=========================//
-var zipCode = $("#postal-code").val();
 
-var queryURL = "https://api.openweathermap.org/data/2.5/forecast?zip="+ zipCode +",us&appid=8caea81085fc66df0fb0c7d61c6772b8"
+$('#submit-zip').on('click', function(){
+var zipCode = $("#postal-code").val().trim();
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?zip="+ zipCode +",us&appid=8caea81085fc66df0fb0c7d61c6772b8"
 $.ajax({
     url: queryURL,
     method: "GET",
@@ -76,6 +77,13 @@ $.ajax({
 }).then(function (response) {
     console.log(response)
 })
+
+
+    
+    console.log(zipCode)
+})
+
+
     
         //store weather data locally using firebase
         $(".btn-primary").on("click", function(event){
@@ -93,5 +101,4 @@ $.ajax({
         //hit face recog
         //store data locally
         //recommend music based on 3 data inputs
-}
-        
+    })

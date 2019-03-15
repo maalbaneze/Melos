@@ -14,15 +14,14 @@ $(document).ready(function(){
         messagingSenderId: "197405510515"
       };
       firebase.initializeApp(config);
-    
+        var database = firebase.database();
     
         //store weather data locally using firebase
         $(".btn-primary").on("click", function(event){
             event.preventDefault();
             var zipCode = $("#postal-code").val();
             $("#postal-code").html("")
-            localStorage.clear();
-            localStorage.setItem("zipcode", zipCode);
+            database.ref().set({"zipcode": zipCode});
             console.log(zipCode)
         });
         //hit spotify api

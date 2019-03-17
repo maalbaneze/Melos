@@ -1,7 +1,19 @@
 body {
     background-image: url("skulls.png");
     background-repeat: repeat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .jumbotron { 
     background-image: linear-gradient(to top right, darkred,red, darkorange, yellow,white,green, blue,indigo, black);
+}
+#video-control {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+.card-header {
+    font-size: 28 px;
+}
+h4 {  
+    font-size: 28 px;
 }

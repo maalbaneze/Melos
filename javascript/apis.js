@@ -44,8 +44,6 @@ $(document).ready(function () {
       }
     })
   }
-
-
   //store weather data locally using firebase
   $(".btn-primary").on("click", function (event) {
     event.preventDefault();

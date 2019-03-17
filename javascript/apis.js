@@ -4,6 +4,7 @@
 //         URL: api.openweathermap.org
 // Giphy Key: i5u86hxDFgUmIDDbuFDZ6vsL4wBLI8B6
 //      URL: api.giphy.com
+<<<<<<< Updated upstream
 
 $(document).ready(function () {
   var config = {

@@ -29,13 +29,13 @@ $.ajax({
 }).then(function(response){
   console.log(response)
   for(let i=0; i<response.list.length; i+=3){
-		var cloud = response.list[i].clouds;
+		var cloud = response.list[i].clouds.all;
 		console.log(cloud);
 
-		var weatherDescription = response.list[i].weather[0];
+		var weatherDescription = response.list[i].weather[0].main;
 		console.log(weatherDescription)
 
-		var temperature = response.list[i].main;
+		var temperature = response.list[i].main.temp;
 		console.log(temperature)
 
 		var date = response.list[i].dt_txt;

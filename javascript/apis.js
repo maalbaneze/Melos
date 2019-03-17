@@ -13,7 +13,6 @@ $(document).ready(function () {
     projectId: "melos-71bca",
     storageBucket: "melos-71bca.appspot.com",
     messagingSenderId: "197405510515"
-
   };
   firebase.initializeApp(config);
   var database = firebase.database();
@@ -26,9 +25,11 @@ $(document).ready(function () {
 
       url: "https://api.openweathermap.org/data/2.5/forecast?zip=" + zipCode + ",us&appid=8caea81085fc66df0fb0c7d61c6772b8",
       method: 'GET',
+
     }).then(function (response) {
       console.log(response)
       for (let i = 0; i < response.list.length; i += 3) {
+        
         var cloud = response.list[i].clouds;
         console.log(cloud);
 
@@ -49,12 +50,13 @@ $(document).ready(function () {
   $(".btn-primary").on("click", function (event) {
     event.preventDefault();
 
-
-
     var zipCode = $("#postal-code").val();
+
     $("#postal-code").html("")
+
     database.ref().set({ "zipcode": zipCode });
     console.log(zipCode)
+    
     getWeather();
   });
   //hit spotify api

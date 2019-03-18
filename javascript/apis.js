@@ -30,7 +30,7 @@ $(document).ready(function () {
       console.log(response)
 
       var weatherType = response.list[0].weather[0].main;
-      
+
       if (weatherType === "Clear") {
         $('body').css('background-image', 'url(images/sun.jpg)');
       }
@@ -98,86 +98,25 @@ $(document).ready(function () {
   //   console.log("Something went wrong!");
   // });
   //}
-
-
-  //The following portions of js code are for Taking still photos with WebRTC
-  //We start by wrapping the whole script in an anonymous function to avoid global variables, then setting up various variables we'll be using
-  (function () {
-    var width = 320;    // We will scale the photo width to this
-    var height = 0;     // This will be computed based on the input stream
-
-    var streaming = false;
-
-    var video = null;
-    var canvas = null;
-    var photo = null;
-    var startbutton = null;
-
-    //The startup() function is run when the page has finished loading, courtesy of window.addEventListener(). This function's job is to request access to the user's webcam, initialize the output <img> to a default state, and to establish the event listeners needed to receive each frame of video from the camera and react when the button is clicked to capture an image.
-    //First, we grab references to the major elements we need to be able to access
-    function startup() {
-      video = document.getElementById('video');
-      canvas = document.getElementById('canvas');
-      photo = document.getElementById('photo');
-      startbutton = document.getElementById('startbutton');
-
-      //The next task is to get the media stream
-      navigator.mediaDevices.getUserMedia({ video: true, audio: false })
-        .then(function (stream) {
-          video.srcObject = stream;
-          video.play();
-        })
-        .catch(function (err) {
-          console.log("An error occurred! " + err);
-        });
-
-      //Listen for the video to start playing
-      video.addEventListener('canplay', function (ev) {
-        if (!streaming) {
-          height = video.videoHeight / (video.videoWidth / width);
-
-          video.setAttribute('width', width);
-          video.setAttribute('height', height);
-          canvas.setAttribute('width', width);
-          canvas.setAttribute('height', height);
-          streaming = true;
-        }
-      }, false);
-
-      //To capture a still photo each time the user clicks the startbutton, we need to add an event listener to the button
-      startbutton.addEventListener('click', function (ev) {
-        takepicture();
-        ev.preventDefault();
-      }, false);
-      clearphoto();
-    }
-
-    //Clearing the photo box 
-    function clearphoto() {
-      var context = canvas.getContext('2d');
-      context.fillStyle = "#AAA";
-      context.fillRect(0, 0, canvas.width, canvas.height);
-
-      var data = canvas.toDataURL('image/png');
-      photo.setAttribute('src', data);
-    }
-
-    // capture the currently displayed video frame 
-    function takepicture() {
-      var context = canvas.getContext('2d');
-      if (width && height) {
-        canvas.width = width;
-        canvas.height = height;
-        context.drawImage(video, 0, 0, width, height);
-
-        var data = canvas.toDataURL('image/png');
-        photo.setAttribute('src', data);
-      } else {
-        clearphoto();
-      }
-    }
-    startup();
-    //store data locally
-    //recommend music based on 3 data inputs
-  })
 })
+
+//WEBCAM TAKES A PHOTO
+const player = document.getElementById('player');
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
+const captureButton = document.getElementById('capture');
+
+const constraints = {
+  video: true,
+};
+
+captureButton.addEventListener('click', () => {
+  // Draw the video frame to the canvas.
+  context.drawImage(player, 0, 0, canvas.width, canvas.height);
+});
+
+// Attach the video stream to the video element and autoplay.
+navigator.mediaDevices.getUserMedia(constraints)
+  .then((stream) => {
+    player.srcObject = stream;
+  });

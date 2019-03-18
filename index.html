@@ -93,7 +93,21 @@
                             <label class="form-check-label" for="jazz">Jazz</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="musicPref" id="random" value="option5">
+                            <input class="form-check-input" type="radio" name="musicPref" id="electronica"
+                                value="option5">
+                            <label class="form-check-label" for="electronica">Electronica</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="musicPref" id="country" value="option6">
+                            <label class="form-check-label" for="country">Country</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="musicPref" id="alternative"
+                                value="option7">
+                            <label class="form-check-label" for="alternative">Alternative</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="musicPref" id="random" value="option8">
                             <label class="form-check-label" for="random">Random</label>
                         </div>
                     </div>
@@ -178,25 +192,23 @@
                 <div class="card mb-4">
                     <div class="card-header text-center text-black bg-light"><b>Facial Mood Detector</b></div>
                     <div class="card-body">
+                        <h4 class="mt-1 text-center">Mood Recognition Check</h4>
+                        <br>
+                        <p class="instructions">* This application uses your facial expression to detect your current
+                            emotional state. <br>
+                            * Press the play (right arrow) key to turn on your camera and, when ready, press the Capture
+                            button.
+                            * It is important that you are genuine and do not try to deceive the application, or
+                            it will not help select the right playlist for your mood. <br>
+                            * This means you should not make any facial expression that is not indicative of how
+                            you feel. Just be how you feel.<br>
+                            * If you want to retake your picture, reload the page.</p>
                         <div class="media">
-                            <!--<video id="video-control" controls></video>-->
-                            <div class="camera">
-                                <video id="video" controls>Video stream not available.</video>
-                                <button id="startbutton">Take your photo</button>
-                            </div>
-                            <canvas id="canvas"></canvas>
-                            <div class="output">
-                                <img id="photo" alt="The screen capture will appear in this box.">
-                            </div>
+                            <video id="player" controls></video>
+                            <button type="button" class="btn btn-primary" id="capture">Capture</button>
+                            <canvas id="canvas" width=240 height=180></canvas>
                             <div class="media-body">
-                                <h4 class="mt-4 text-center">Mood Recognition Check</h4>
-                                <br>
-                                <p class="instructions">This application uses your face to detect your current emotional
-                                    state. <br>
-                                    It is important that you are genuine and do not try to deceive the application, or
-                                    it will not help select the right playlist for your mood. <br>
-                                    This means you should not make any facial expression that is not indicative of how
-                                    you feel. Just be how you feel.</p>
+
                             </div>
                         </div>
                     </div>
@@ -247,7 +259,7 @@
                 <div class="card mb-4">
                     <div class="card-header text-center text-black bg-warning"><b>Accept or Reject</b></div>
                     <div class="card-body">
-                        <input class="btn btn-success" type="button" value="Accept and Play">
+                        <input class="btn btn-success" type="submit" value="Accept and Play">
                         <input class="btn btn-danger" type="submit" value="Reject and get a New Playlist">
                     </div>
                 </div>

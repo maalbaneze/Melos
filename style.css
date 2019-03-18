@@ -11,14 +11,14 @@ body {
 .card-header {
     font-size: 28px;
 }
-#video {
-    width: 500px;
-    height: 375px;
+#player {
+    width: 320px;
+    height: 240px;
     background-color: #666;
     border-color: royalblue;
     border-width: 10px;
 }
-#photo {
+#canvas {
     float: left;
 }
 h4 {
@@ -27,5 +27,5 @@ h4 {
 }
 .instructions {
     padding: 10px;
-    font-size: 24px;
+    font-size: 20px;
 }

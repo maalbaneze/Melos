@@ -180,15 +180,9 @@
                     <div class="card-header text-center text-black bg-light"><b>Facial Mood Detector</b></div>
                     <div class="card-body">
                         <div class="media">
-                            <!--<video id="video-control" controls></video>-->
-                            <div class="camera">
-                                <video id="video" controls>Video stream not available.</video>
-                                <button id="startbutton">Take your photo</button>
-                            </div>
-                            <canvas id="canvas"></canvas>
-                            <div class="output">
-                                <img id="photo" alt="The screen capture will appear in this box.">
-                            </div>
+                            <video id="player" controls autoplay></video>
+                            <button type="button" class="btn btn-primary" id="capture">Capture</button>
+                            <canvas id="canvas" width=240 height=180></canvas>
                             <div class="media-body">
                                 <h4 class="mt-4 text-center">Mood Recognition Check</h4>
                                 <br>
@@ -248,7 +242,7 @@
                 <div class="card mb-4">
                     <div class="card-header text-center text-black bg-warning"><b>Accept or Reject</b></div>
                     <div class="card-body">
-                        <input class="btn btn-success" type="button" value="Accept and Play">
+                        <input class="btn btn-success" type="submit" value="Accept and Play">
                         <input class="btn btn-danger" type="submit" value="Reject and get a New Playlist">
                     </div>
                 </div>

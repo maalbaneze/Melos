@@ -48,7 +48,7 @@ var weatherDescription;
       }
       if (weatherType === "Thunder") {
         $('body').css('background-image', 'url(images/thunder.jpg)');
-      }
+      } 
       if (weatherType === "Rain") {
         $('body').css('background-image', 'url(images/heavy-rain.jpg)');
       }

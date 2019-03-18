@@ -14,7 +14,16 @@ $(document).ready(function () {
     storageBucket: "melos-71bca.appspot.com",
     messagingSenderId: "197405510515"
 
-  };
+};
+// get user inputs
+var musicPref = $("#musicP").val()
+var weatherPref =  $("#weatherP").val()
+var mood = $("#moodP").val()
+
+firebase.initializeApp(config);
+var database = firebase.database();
+var weatherDescription;
+
   firebase.initializeApp(config);
   var database = firebase.database();
 
@@ -77,46 +86,93 @@ $(document).ready(function () {
 
 
 
-    var zipCode = $("#postal-code").val();
+
+//corralate user info to generate playlist
+$("#submit").on("click", function (event) {
+  event.preventDefault();
     $("#postal-code").html("")
-    database.ref().set({ "zipcode": zipCode });
-    console.log(zipCode)
     getWeather();
-  });
-  //hit spotify api
-  //GET user authentication
-  //hit face recog
+     //recommend music based on 3 data inputs
+    //  if ({
+    //   weatherDescription = clear,
+    //   musicPref 
+      
 
-  //var video = document.querySelector("#video");
-
-  //if (navigator.mediaDevices.getUserMedia) {
-  //navigator.mediaDevices.getUserMedia({ video: true })
-  // .then(function (stream) {
-  //   video.srcObject = stream;
-  // })
-  //.catch(function (err0r) {
-  //   console.log("Something went wrong!");
-  // });
-  //}
-})
-
-//WEBCAM TAKES A PHOTO
-const player = document.getElementById('player');
-const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2d');
-const captureButton = document.getElementById('capture');
-
-const constraints = {
-  video: true,
-};
-
-captureButton.addEventListener('click', () => {
-  // Draw the video frame to the canvas.
-  context.drawImage(player, 0, 0, canvas.width, canvas.height);
+    // });
 });
 
-// Attach the video stream to the video element and autoplay.
-navigator.mediaDevices.getUserMedia(constraints)
-  .then((stream) => {
-    player.srcObject = stream;
-  });
+//hit face recog
+
+  const player = document.getElementById('player');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  const captureButton = document.getElementById('capture');
+  const constraints = {
+      video: true,
+  };
+  captureButton.addEventListener('click', () => {
+      // Draw the video frame to the canvas.
+      context.drawImage(player, 0, 0, canvas.width, canvas.height);
+      player.srcObject.getVideoTracks().forEach(track => track.stop());
+      }
+  );
+
+  // Attach the video stream to the video element and autoplay.
+  navigator.mediaDevices.getUserMedia(constraints)
+      .then((stream) => {
+          player.srcObject = stream;
+          
+      });
+      function processImage() {
+        // Replace <Subscription Key> with your valid subscription key.
+        var subscriptionKey = "9f64fbd89816421ca1fc4e7bce4311c1";
+        var uriBase =
+            "https://westus.api.cognitive.microsoft.com/face/v1.0/detect";
+    
+        // Request parameters.
+        var params = {
+            "returnFaceId": "true",
+            "returnFaceLandmarks": "false",
+            "returnFaceAttributes":
+                "age,gender,headPose,smile,facialHair,glasses,emotion," +
+                "hair,makeup,occlusion,accessories,blur,exposure,noise"
+        };
+    
+        // Display the image.
+        var sourceImageUrl = document.getElementById("canvas").value;
+        document.querySelector("#canvas").src = sourceImageUrl;
+    
+        // Perform the REST API call.
+        $.ajax({
+            url: uriBase + "?" + $.param(params),
+    
+            // Request headers.
+            beforeSend: function(xhrObj){
+                xhrObj.setRequestHeader("Content-Type","application/json");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+            },
+    
+            type: "POST",
+    
+            // Request body.
+            data: '{"url": ' + '"' + sourceImageUrl + '"}',
+        })
+    
+        .done(function(data) {
+            // Show formatted JSON on webpage.
+            $("#responseTextArea").val(JSON.stringify(data, null, 2));
+        })
+    
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            // Display error message.
+            var errorString = (errorThrown === "") ?
+                "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+            errorString += (jqXHR.responseText === "") ?
+                "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
+                    jQuery.parseJSON(jqXHR.responseText).message :
+                        jQuery.parseJSON(jqXHR.responseText).error.message;
+            alert(errorString);
+        });
+    };
+  })
+})

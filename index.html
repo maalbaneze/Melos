@@ -36,6 +36,38 @@
 
     </div>
 
+    <!-- User account login form (MOVE THIS TO UPPER RIGHT OF PAGE)
+    <div class=container>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-header text-white bg-dark"><b>Login</b></div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp"
+                                    placeholder="Enter email">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    anyone
+                                    else...'cause that's not how we roll.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="input-password">Password</label>
+                                <input type="password" class="form-control" id="user-password" placeholder="Password">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="remember-me">
+                                <label class="form-check-label" for="remember-me">Remember Me</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
     <!-- User music preferences form (UPDATE USER CHOICE OPTIONS) -->
 
     <div class=container>
@@ -44,29 +76,24 @@
                 <div class="card mb-4">
                     <div class="card-header text-white bg-info"><b>Your Music Preference</b></div>
                     <div class="card-body">
-                        <div class="form-check form-check-inline" id = "musicP">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rock"
-                                value="option1">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="musicPref" id="rock" value="option1">
                             <label class="form-check-label" for="rock">Rock</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="R&B"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="musicPref" id="R&B" value="option2">
                             <label class="form-check-label" for="R&B">R&B</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="hip-hop"
-                                value="option3">
+                            <input class="form-check-input" type="radio" name="musicPref" id="hip-hop" value="option3">
                             <label class="form-check-label" for="hip-hop">HipHop</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="jazz"
-                                value="option4">
+                            <input class="form-check-input" type="radio" name="musicPref" id="jazz" value="option4">
                             <label class="form-check-label" for="jazz">Jazz</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="random"
-                                value="option5">
+                            <input class="form-check-input" type="radio" name="musicPref" id="random" value="option5">
                             <label class="form-check-label" for="random">Random</label>
                         </div>
                     </div>
@@ -83,29 +110,28 @@
                 <div class="card mb-4">
                     <div class="card-header text-white bg-primary"><b>Weather Preferences</b></div>
                     <div class="card-body">
-                        <div class="form-check form-check-inline" id = "weatherP">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="clear-sunny"
-                                value="option1">
-                            <label class="form-check-label" for="clear-sunny">Clear and Sunny</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wxPref" id="clear" value="option1">
+                            <label class="form-check-label" for="clear-sunny">Clear</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="overcast"
-                                value="option2">
-                            <label class="form-check-label" for="overcast">Overcast</label>
+                            <input class="form-check-input" type="radio" name="wxPref" id="drizzle" value="option2">
+                            <label class="form-check-label" for="overcast">Drizzle</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cloudy"
-                                value="option3">
-                            <label class="form-check-label" for="cloudy">Cloudy</label>
+                            <input class="form-check-input" type="radio" name="wxPref" id="rain" value="option3">
+                            <label class="form-check-label" for="cloudy">Rain</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="stormy"
-                                value="option4">
-                            <label class="form-check-label" for="stormy">Stormy</label>
+                            <input class="form-check-input" type="radio" name="wxPref" id="stormy" value="option4">
+                            <label class="form-check-label" for="stormy">Thunderstorm</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="snow"
-                                value="option5">
+                            <input class="form-check-input" type="radio" name="wxPref" id="clouds" value="option5">
+                            <label class="form-check-label" for="stormy">Clouds</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wxPref" id="snow" value="option6">
                             <label class="form-check-label" for="snow">Snow</label>
                         </div>
                     </div>
@@ -122,24 +148,20 @@
                 <div class="card mb-4">
                     <div class="card-header text-black bg-light"><b>Current Mood</b></div>
                     <div class="card-body">
-                        <div class="form-check form-check-inline" id = "moodP">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="great"
-                                value="option1">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="moodPref" id="great" value="option1">
                             <label class="form-check-label" for="great">Feeling great!</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ok"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="moodPref" id="ok" value="option2">
                             <label class="form-check-label" for="ok">I'm okay</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="blah"
-                                value="option3">
+                            <input class="form-check-input" type="radio" name="moodPref" id="blah" value="option3">
                             <label class="form-check-label" for="blah">Got the blahs</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="bummed"
-                                value="option4">
+                            <input class="form-check-input" type="radio" name="moodPref" id="bummed" value="option4">
                             <label class="form-check-label" for="bummed">Bummed out</label>
                         </div>
                     </div>
@@ -157,7 +179,15 @@
                     <div class="card-header text-center text-black bg-light"><b>Facial Mood Detector</b></div>
                     <div class="card-body">
                         <div class="media">
-                            <video id="video-control" controls></video>
+                            <!--<video id="video-control" controls></video>-->
+                            <div class="camera">
+                                <video id="video" controls>Video stream not available.</video>
+                                <button id="startbutton">Take your photo</button>
+                            </div>
+                            <canvas id="canvas"></canvas>
+                            <div class="output">
+                                <img id="photo" alt="The screen capture will appear in this box.">
+                            </div>
                             <div class="media-body">
                                 <h4 class="mt-4 text-center">Mood Recognition Check</h4>
                                 <br>
@@ -209,7 +239,7 @@
         </div>
     </div>
 
-    <!-- User buttons to accept and play, or reject playlist and get a new one ONLY SHOWN AFTER PLAYLIST IS GENERATED -->
+    <!-- User buttons to accept and play, or reject playlist and get a new one ONLY SHOWN AFTER PLAYLIST IS GENERATED 
 
     <!-- <div class=container id="start-session">
         <div class="row">
@@ -223,9 +253,9 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>-->
 
-    <!-- User Start, Pause, and End buttons ONLY SHOWN AFTER PLAYLIST IS GENERATED-->
+    <!-- User Start, Pause, and End buttons ONLY SHOWN AFTER PLAYLIST IS GENERATED
 
     <!-- <div class=container id="during-play">
         <div class="row">
@@ -241,7 +271,7 @@
             </div>
 
         </div>
-    </div> -->
+    </div>-->
 
 
 

@@ -60,8 +60,10 @@ $("#submit").on("click", function (event) {
   event.preventDefault();
     $("#postal-code").html("")
     getWeather();
-    // if ({
+     //recommend music based on 3 data inputs
+    //  if ({
     //   weatherDescription = clear,
+    //   musicPref 
       
 
     // });
@@ -70,18 +72,25 @@ $("#submit").on("click", function (event) {
 
 //hit face recog
 
-  var video = document.querySelector("#videoElement");
-
-  if (navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function (stream) {
-        video.srcObject = stream;
-      })
-      .catch(function (err0r) {
-        console.log("Something went wrong!");
+  const player = document.getElementById('player');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  const captureButton = document.getElementById('capture');
+  const constraints = {
+      video: true,
+  };
+  captureButton.addEventListener('click', () => {
+      // Draw the video frame to the canvas.
+      context.drawImage(player, 0, 0, canvas.width, canvas.height);
+  });
+  // Attach the video stream to the video element and autoplay.
+  navigator.mediaDevices.getUserMedia(constraints)
+      .then((stream) => {
+          player.srcObject = stream;
       });
-  }
-
-  //store data locally
-  //recommend music based on 3 data inputs
+ $.ajax({
+   url : "",
+   method : "GET"
+ }).then(function(){})
 })
+

@@ -190,7 +190,15 @@
                     <div class="card-header text-center text-black bg-light"><b>Facial Mood Detector</b></div>
                     <div class="card-body">
                         <div class="media">
-                            <video id="video-control" controls></video>
+                            <!--<video id="video-control" controls></video>-->
+                            <div class="camera">
+                                <video id="video">Video stream not available.</video>
+                                <button id="startbutton">Take your photo</button>
+                            </div>
+                            <canvas id="canvas"></canvas>
+                            <div class="output">
+                                <img id="photo" alt="The screen capture will appear in this box.">
+                            </div>
                             <div class="media-body">
                                 <h4 class="mt-4 text-center">Mood Recognition Check</h4>
                                 <br>

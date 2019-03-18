@@ -18,7 +18,7 @@ messagingSenderId: "197405510515"
 firebase.initializeApp(config);
 var database = firebase.database();
 
-//AJAX
+//===============AJAX===========================//
 function getWeather(){
 var zipCode= $('#postal-code').val();
 console.log(zipCode)

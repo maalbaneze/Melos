@@ -8,6 +8,7 @@
 
 $(document).ready(function () {
   var config = {
+<<<<<<< Updated upstream
 apiKey: "AIzaSyBFvIwDGuvgIoxHnmSgUzbAmzW8gvpnxKo",
 authDomain: "melos-71bca.firebaseapp.com",
 databaseURL: "https://melos-71bca.firebaseio.com",
@@ -64,23 +65,66 @@ getWeather();
 =======
 $(document).ready(function () {
   var config = {
+=======
+>>>>>>> Stashed changes
     apiKey: "AIzaSyBFvIwDGuvgIoxHnmSgUzbAmzW8gvpnxKo",
     authDomain: "melos-71bca.firebaseapp.com",
     databaseURL: "https://melos-71bca.firebaseio.com",
     projectId: "melos-71bca",
     storageBucket: "melos-71bca.appspot.com",
     messagingSenderId: "197405510515"
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
   };
   firebase.initializeApp(config);
   var database = firebase.database();
 
+<<<<<<< Updated upstream
   //store weather data locally using firebase
   $(".btn-primary").on("click", function (event) {
     event.preventDefault();
+=======
+  //AJAX
+  function getWeather() {
+    var zipCode = $('#postal-code').val();
+    console.log(zipCode)
+    $.ajax({
+
+      url: "https://api.openweathermap.org/data/2.5/forecast?zip=" + zipCode + ",us&appid=8caea81085fc66df0fb0c7d61c6772b8",
+      method: 'GET',
+    }).then(function (response) {
+      console.log(response)
+      for (let i = 0; i < response.list.length; i += 3) {
+        var cloud = response.list[i].clouds.all;
+        console.log(cloud);
+
+        var weatherDescription = response.list[i].weather[0].main;
+        console.log(weatherDescription)
+
+        var temperature = response.list[i].main.temp;
+        console.log(temperature)
+
+        var date = response.list[i].dt_txt;
+        console.log(date);
+      }
+    })
+  }
+
+
+  //store weather data locally using firebase
+  $(".btn-primary").on("click", function (event) {
+    event.preventDefault();
+
+
+
+>>>>>>> Stashed changes
     var zipCode = $("#postal-code").val();
     $("#postal-code").html("")
     database.ref().set({ "zipcode": zipCode });
     console.log(zipCode)
+<<<<<<< Updated upstream
   });
   //hit spotify api
   //GET user authentication
@@ -97,12 +141,27 @@ navigator.mediaDevices.getUserMedia({ video: true })
   })
   .catch(function (err0r) {
     console.log("Something went wrong!");
+=======
+    getWeather();
+>>>>>>> Stashed changes
   });
-}
+  //hit spotify api
+  //GET user authentication
+  //hit face recog
 
-      //store data locally
-      //recommend music based on 3 data inputs
+  var video = document.querySelector("#videoElement");
 
+  if (navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function (stream) {
+        video.srcObject = stream;
+      })
+      .catch(function (err0r) {
+        console.log("Something went wrong!");
+      });
+  }
+
+<<<<<<< Updated upstream
 });
 =======
   if (navigator.mediaDevices.getUserMedia) {
@@ -118,4 +177,10 @@ navigator.mediaDevices.getUserMedia({ video: true })
   //store data locally
   //recommend music based on 3 data inputs
 })
+>>>>>>> Stashed changes
+=======
+  //store data locally
+  //recommend music based on 3 data inputs
+
+});
 >>>>>>> Stashed changes

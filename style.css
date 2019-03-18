@@ -6,6 +6,12 @@ body {
     background-image: linear-gradient(to top right, darkred,red, darkorange, yellow,white,green, blue,indigo, black);
     font-family: Verdana, Tahoma, sans-serif; 
     color: rgb(65, 44, 37);
+<<<<<<< Updated upstream
+=======
+}
+.card-header {
+    font-size: 28px;
+>>>>>>> Stashed changes
 }
 .card-header {
     font-size: 28px;

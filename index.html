@@ -36,39 +36,6 @@
 
     </div>
 
-    <!-- User account login form (MOVE THIS TO UPPER RIGHT OF PAGE)
-
-    <div class=container>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card mb-4">
-                    <div class="card-header text-white bg-dark"><b>Login</b></div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp"
-                                    placeholder="Enter email">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone
-                                    else...'cause that's not how we roll.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="input-password">Password</label>
-                                <input type="password" class="form-control" id="user-password" placeholder="Password">
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="remember-me">
-                                <label class="form-check-label" for="remember-me">Remember Me</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- User music preferences form (UPDATE USER CHOICE OPTIONS) -->
 
     <div class=container>
@@ -77,7 +44,7 @@
                 <div class="card mb-4">
                     <div class="card-header text-white bg-info"><b>Your Music Preference</b></div>
                     <div class="card-body">
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline" id = "musicP">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rock"
                                 value="option1">
                             <label class="form-check-label" for="rock">Rock</label>
@@ -116,7 +83,7 @@
                 <div class="card mb-4">
                     <div class="card-header text-white bg-primary"><b>Weather Preferences</b></div>
                     <div class="card-body">
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline" id = "weatherP">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="clear-sunny"
                                 value="option1">
                             <label class="form-check-label" for="clear-sunny">Clear and Sunny</label>
@@ -155,7 +122,7 @@
                 <div class="card mb-4">
                     <div class="card-header text-black bg-light"><b>Current Mood</b></div>
                     <div class="card-body">
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline" id = "moodP">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="great"
                                 value="option1">
                             <label class="form-check-label" for="great">Feeling great!</label>
@@ -218,7 +185,7 @@
                         <div id="country">
                             <label>Zip or Postal Code</label>
                             <input id="postal-code" type="text" class="form-control" name="postal-code">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -234,7 +201,7 @@
                 <div class="card mb-4">
                     <div class="card-header text-white bg-primary"><strong>Current Playlist</strong></div>
                     <div class="card-body">
-                        <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300"
+                        <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="700"
                             height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </div>
                 </div>
@@ -244,7 +211,7 @@
 
     <!-- User buttons to accept and play, or reject playlist and get a new one ONLY SHOWN AFTER PLAYLIST IS GENERATED -->
 
-    <div class=container id="start-session">
+    <!-- <div class=container id="start-session">
         <div class="row">
             <div class="col-md-12" style="max-width: 36rem;">
                 <div class="card mb-4">
@@ -256,11 +223,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- User Start, Pause, and End buttons ONLY SHOWN AFTER PLAYLIST IS GENERATED-->
 
-    <div class=container id="during-play">
+    <!-- <div class=container id="during-play">
         <div class="row">
             <div class="col-md-12" style="max-width: 36rem;">
                 <div class="card mb-4">
@@ -274,7 +241,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
 
 

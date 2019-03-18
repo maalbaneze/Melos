@@ -28,8 +28,34 @@ $(document).ready(function () {
       method: 'GET',
     }).then(function (response) {
       console.log(response)
+
+      var weatherType = response.list[0].weather[0].main;
+      
+      if (weatherType === "Clear") {
+        $('body').css('background-image', 'url(images/sun.jpg)');
+      }
+      if (weatherType === "Cloud") {
+        $('body').css('background-image', 'url(images/clouds.jpg)');
+      }
+      if (weatherType === "Thunder") {
+        $('body').css('background-image', 'url(images/thunder.jpg)');
+      }
+      if (weatherType === "Rain") {
+        $('body').css('background-image', 'url(images/heavy-rain.jpg)');
+      }
+      if (weatherType === "Drizzle") {
+        $('body').css('background-image', 'url(images/heavy-rain.jpg)');
+      }
+      if (weatherType === "Snow") {
+        $('body').css('background-image', 'url(images/heavy-rain.jpg)');
+      }
+
+
+
+
       for (let i = 0; i < response.list.length; i += 3) {
         var cloud = response.list[i].clouds.all;
+
         console.log(cloud);
 
         var weatherDescription = response.list[i].weather[0].main;

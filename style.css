@@ -9,7 +9,13 @@ body {
     color: rgb(65, 44, 37);
 }
 .card-header {
-    font-size: 28px;
+    font-size: 24px;
+}
+.instructions {
+    font-size: 20px;
+    border-color: darkgray;
+    margin: 10px;
+    padding: 10px;
 }
 #player {
     width: 320px;
@@ -17,15 +23,17 @@ body {
     background-color: #666;
     border-color: royalblue;
     border-width: 10px;
+    padding: 10px;
+}
+#capture {
+    margin-left: 10px;
+    position:relative;
 }
 #canvas {
-    float: left;
+    float: right;
+    padding: 10px;
 }
 h4 {
     font-size: 24px;
     text-decoration: underline;
-}
-.instructions {
-    padding: 10px;
-    font-size: 20px;
 }

@@ -24,39 +24,6 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var weatherDescription;
 
-
-//===============AJAX===========================//
-function getWeather(){
-  var zipCode= $('#postal-code').val();
-console.log(zipCode)
-$.ajax({
-	url: "https://api.openweathermap.org/data/2.5/forecast?zip=" + zipCode + ",us&appid=8caea81085fc66df0fb0c7d61c6772b8",
-	method:'GET',
-}).then(function(response){
-  console.log(response)
-  for(let i=0; i<response.list.length; i+=3){
-		var cloud = response.list[i].clouds.all;
-		console.log(cloud);
-
-		weatherDescription = response.list[i].weather[0].main;
-		console.log(weatherDescription)
-
-		var temperature = response.list[i].main.temp;
-		console.log(temperature)
-
-		var date = response.list[i].dt_txt;
-    console.log(date);
-    // database.ref().set({ "zipcode" : zipCode });
-    database.ref().set({ "weather" : weatherDescription })
-	}
-})
-}
-$("#musicP").on("click", function (){
-    database.ref().set({"Music Pref:": musicPref})
-})
-=======
-
-  };
   firebase.initializeApp(config);
   var database = firebase.database();
 
@@ -208,3 +175,4 @@ $("#submit").on("click", function (event) {
         });
     };
   })
+})

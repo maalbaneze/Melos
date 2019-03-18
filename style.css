@@ -10,7 +10,7 @@ body {
 .card-header {
     font-size: 28px;
 }
-#videoElement {
+#video-control {
     width: 500px;
     height: 375px;
     background-color: #666;

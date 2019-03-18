@@ -7,6 +7,7 @@
 
 $(document).ready(function () {
   var config = {
+<<<<<<< HEAD
     apiKey: "AIzaSyBFvIwDGuvgIoxHnmSgUzbAmzW8gvpnxKo",
     authDomain: "melos-71bca.firebaseapp.com",
     databaseURL: "https://melos-71bca.firebaseio.com",
@@ -60,6 +61,61 @@ $(document).ready(function () {
   //hit spotify api
   //GET user authentication
   //hit face recog
+=======
+apiKey: "AIzaSyBFvIwDGuvgIoxHnmSgUzbAmzW8gvpnxKo",
+authDomain: "melos-71bca.firebaseapp.com",
+databaseURL: "https://melos-71bca.firebaseio.com",
+projectId: "melos-71bca",
+storageBucket: "melos-71bca.appspot.com",
+messagingSenderId: "197405510515"
+
+};
+firebase.initializeApp(config);
+var database = firebase.database();
+
+//===============AJAX===========================//
+function getWeather(){
+var zipCode= $('#postal-code').val();
+console.log(zipCode)
+$.ajax({
+
+	url: "https://api.openweathermap.org/data/2.5/forecast?zip=" + zipCode + ",us&appid=8caea81085fc66df0fb0c7d61c6772b8",
+	method:'GET',
+}).then(function(response){
+  console.log(response)
+  for(let i=0; i<response.list.length; i+=3){
+		var cloud = response.list[i].clouds.all;
+		console.log(cloud);
+
+		var weatherDescription = response.list[i].weather[0].main;
+		console.log(weatherDescription)
+
+		var temperature = response.list[i].main.temp;
+		console.log(temperature)
+
+		var date = response.list[i].dt_txt;
+		console.log(date);
+	}
+})
+}
+
+
+//store weather data locally using firebase
+$(".btn-primary").on("click", function (event) {
+event.preventDefault();
+
+
+
+var zipCode = $("#postal-code").val();
+$("#postal-code").html("")
+database.ref().set({ "zipcode": zipCode });
+console.log(zipCode)
+getWeather();
+});
+//hit spotify api
+//GET user authentication
+//hit face recog
+>>>>>>> 21b7f93ac2d6bf65507214cb0003bcf8e5a6f42a
 
   var video = document.querySelector("#videoElement");
 
@@ -75,5 +131,9 @@ $(document).ready(function () {
 
   //store data locally
   //recommend music based on 3 data inputs
+<<<<<<< HEAD
 
 });
+=======
+})
+>>>>>>> 21b7f93ac2d6bf65507214cb0003bcf8e5a6f42a

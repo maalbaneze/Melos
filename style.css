@@ -1,27 +1,19 @@
 body {
     background-image: url("skulls.png");
     background-repeat: repeat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .jumbotron { 
     background-image: linear-gradient(to top right, darkred,red, darkorange, yellow,white,green, blue,indigo, black);
-    font-family: Verdana, Tahoma, sans-serif; 
-    color: rgb(65, 44, 37);
 }
-.card-header {
-    font-size: 28px;
-}
-#videoElement {
+#video-control {
     width: 500px;
     height: 375px;
     background-color: #666;
-    border-color: royalblue;
-    border-width: 10px;
 }
-h4 {
-    font-size: 24px;
-    text-decoration: underline;
+.card-header {
+    font-size: 28 px;
 }
-.instructions {
-    padding: 10px;
-    font-size: 24px;
+h4 {  
+    font-size: 28 px;
 }

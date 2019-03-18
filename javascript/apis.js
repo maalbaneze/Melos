@@ -13,6 +13,7 @@ $(document).ready(function () {
     projectId: "melos-71bca",
     storageBucket: "melos-71bca.appspot.com",
     messagingSenderId: "197405510515"
+
 };
 // get user inputs
 var musicPref = $("#musicP").val()
@@ -53,6 +54,70 @@ $.ajax({
 $("#musicP").on("click", function (){
     database.ref().set({"Music Pref:": musicPref})
 })
+=======
+
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+
+  //===============AJAX===========================//
+  function getWeather() {
+    var zipCode = $('#postal-code').val();
+    console.log(zipCode)
+    $.ajax({
+
+      url: "https://api.openweathermap.org/data/2.5/forecast?zip=" + zipCode + ",us&appid=8caea81085fc66df0fb0c7d61c6772b8",
+      method: 'GET',
+    }).then(function (response) {
+      console.log(response)
+
+      var weatherType = response.list[0].weather[0].main;
+      
+      if (weatherType === "Clear") {
+        $('body').css('background-image', 'url(images/sun.jpg)');
+      }
+      if (weatherType === "Cloud") {
+        $('body').css('background-image', 'url(images/clouds.jpg)');
+      }
+      if (weatherType === "Thunder") {
+        $('body').css('background-image', 'url(images/thunder.jpg)');
+      }
+      if (weatherType === "Rain") {
+        $('body').css('background-image', 'url(images/heavy-rain.jpg)');
+      }
+      if (weatherType === "Drizzle") {
+        $('body').css('background-image', 'url(images/heavy-rain.jpg)');
+      }
+      if (weatherType === "Snow") {
+        $('body').css('background-image', 'url(images/heavy-rain.jpg)');
+      }
+
+
+
+
+      for (let i = 0; i < response.list.length; i += 3) {
+        var cloud = response.list[i].clouds.all;
+
+        console.log(cloud);
+
+        var weatherDescription = response.list[i].weather[0].main;
+        console.log(weatherDescription)
+
+        var temperature = response.list[i].main.temp;
+        console.log(temperature)
+
+        var date = response.list[i].dt_txt;
+        console.log(date);
+      }
+    })
+  }
+
+
+  //store weather data locally using firebase
+  $(".btn-primary").on("click", function (event) {
+    event.preventDefault();
+
+
 
 
 //corralate user info to generate playlist

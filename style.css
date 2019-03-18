@@ -1,6 +1,7 @@
 body {
     background-image: url("skulls.png");
     background-repeat: repeat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .jumbotron { 
     background-image: linear-gradient(to top right, darkred,red, darkorange, yellow,white,green, blue,indigo, black);

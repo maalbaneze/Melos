@@ -16,10 +16,22 @@ $(document).ready(function () {
 
   };
   // get user inputs
-  var musicPref = $("#musicPref").val()
-  var weatherPref = $("#wxPref").val()
-  var mood = $("#moodPref").val()
+  $(".form-check-input").click(function(){
+  
+})
 
+
+$('#check').on('change', function() {
+  var musicPref = $("#musicPref").val();
+  var weatherPref = $("#wxPref").val();
+  var mood = $("#moodPref").val();
+  var val = this.checked ? this.value : '';
+  
+console.log(val);
+console.log(weatherPref);
+console.log(mood);
+  
+});
   firebase.initializeApp(config);
   var database = firebase.database();
   var weatherType;
@@ -39,21 +51,27 @@ $(document).ready(function () {
 
       if (weatherType === "Clear") {
         $('body').css('background-image', 'url(images/sun.jpg)');
+        $("#playlist").attr("src"," https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DXdPec7aLTmlC");
       }
       if (weatherType === "Cloud") {
         $('body').css('background-image', 'url(images/clouds.jpg)');
+        $("#playlist").attr("src"," https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DWT6MhXz0jw61");
       }
       if (weatherType === "Thunder") {
         $('body').css('background-image', 'url(images/thunder.jpg)');
+          $("#playlist").attr("src","https://open.spotify.com/embed/user/sonymusicfinland/playlist/5BygwTQ3OrbiwVsQhXFHMz");
       }
       if (weatherType === "Rain") {
         $('body').css('background-image', 'url(images/heavy-rain.jpg)');
+          $("#playlist").attr("src"," https://open.spotify.com/embed/user/1233564303/playlist/0NcQtKxtJUS1tzzliuAUzE");
       }
       if (weatherType === "Drizzle") {
         $('body').css('background-image', 'url(images/heavy-rain.jpg)');
+          $("#playlist").attr("src","https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX1s9knjP51Oa");
       }
       if (weatherType === "Snow") {
         $('body').css('background-image', 'url(images/heavy-rain.jpg)');
+          $("#playlist").attr("src","https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX6ziVCJnEm59");
       }
 
 

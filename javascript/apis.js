@@ -19,15 +19,21 @@ $(document).ready(function () {
     storageBucket: "melos-71bca.appspot.com",
     messagingSenderId: "197405510515"
   };
+
+  /// Initialize Firebase with data
+  firebase.initializeApp(config);
+  var database = firebase.database();
+  //var weatherType;
+  database.ref().set({ musicPref: [], weatherPref: [], mood: [] });
+  database.ref().on("value", function (snapshot) {
+    console.log(snapshot.val())
+  })
+
   // Get user input preferences and store as variables
   var musicPref = $("#musicPref").val()
   var weatherPref = $("#wxPref").val()
   var mood = $("#moodPref").val()
 
-  /// Initialize Firebase with data
-  firebase.initializeApp(config);
-  var database = firebase.database();
-  var weatherType;
 
   // Obtain a user pic for sending to MS Azure facial recog API
   const player = document.getElementById('player');
@@ -81,20 +87,14 @@ function processImage() {
       xhrObj.setRequestHeader("Content-Type", "application/json");
       xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
     },
-
     type: "POST",
-
     // Request body.
     data: '{"url": ' + '"' + sourceImageUrl + '"}',
-  });
-
-    .done(function (data) {
+  }).done(function (data) {
     // Show formatted JSON on webpage.
     $("#responseTextArea").val(JSON.stringify(data, null, 2));
     console.log(data)
-  });
-
-    .fail(function (jqXHR, textStatus, errorThrown) {
+  }).fail(function (jqXHR, textStatus, errorThrown) {
     // Display error message.
     var errorString = (errorThrown === "") ?
       "Error. " : errorThrown + " (" + jqXHR.status + "): ";

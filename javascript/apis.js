@@ -219,6 +219,9 @@ function getWeather() {
 
     if (weatherType === "Clear") {
       $('body').css('background-image', 'url(images/sun.jpg)');
+      // $("#header-name").css("text-shadow", "
+      // -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
+      $('#header-name').css('text-shadow','black -5px 5px 1px');
     }
     if (weatherType === "Cloud") {
       $('body').css('background-image', 'url(images/clouds.jpg)');

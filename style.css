@@ -7,20 +7,65 @@ body {
     background-size: 100%;
 }
 
-/* changed the jumborton css */
+/* changed the jumborton css -dennis*/
 .jumbotron { 
     font-family: Verdana, Tahoma, sans-serif; 
     color: white;
     height: 150px;
     padding: 0;
 }
-
+/* created css -dennis*/
 #header-name {
     font-size: 100px;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     letter-spacing: 5px;
 }
+
+/*background-color: rgb(193, 193, 215, 0.3);*/
+.card-background {
+    background-color: transparent;
+    width: 175px;
+    color: white;
+    
+    }
+    .card-wrap {
+    
+        padding: 10px;
+    }
+
+    /*
+font-family: 'Quicksand', sans-serif;
+font-family: 'Dosis', sans-serif;
+font-family: 'Maven Pro', sans-serif;
+font-family: 'Comfortaa', cursive;
+font-family: 'Roboto', sans-serif;
+*/
+
+#submit {
+    background-color: transparent;
+    border: 1px solid  rgb(193, 193, 215);
+}
+
+#postal-code {
+    border: 1px solid  rgb(193, 193, 215);
+    background-color: transparent;
+}
+/*hovers*/
+#submit:hover {
+    background-color: rgb(193, 193, 215, 0.6);
+}
+
+#postal-code:hover {
+    background-color: rgb(193, 193, 215, 0.6);
+}
+
+.form-control::-webkit-input-placeholder { color: lightgray; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: lightgray; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: lightgray; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: lightgray; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: lightgray; }  /* Microsoft Edge */
+
 .card-header {
     font-size: 24px;
 }
@@ -50,9 +95,6 @@ h4 {
     font-size: 24px;
     text-decoration: underline;
 }
-
-
-/* RADIO BUTTONS */
 
 /* RADIO BUTTONS*/
 [class*="icheck-"] {

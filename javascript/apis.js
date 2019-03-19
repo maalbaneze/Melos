@@ -24,37 +24,46 @@ $(document).ready(function () {
   firebase.initializeApp(config);
   var database = firebase.database();
   //var weatherType;
-  database.ref().set({ musicPref: [], weatherPref: [], mood: [] });
+  database.ref().set({ musicChoice: [], weatherPref: [], mood: [] });
   database.ref().on("value", function (snapshot) {
     console.log(snapshot.val())
   })
 
-  // Get user input preferences and store as variables
-  var musicPref = $("#musicPref").val()
-  var weatherPref = $("#wxPref").val()
-  var mood = $("#moodPref").val()
+  // Get user input preferences on radio button select and store as variables
 
+  $(document).ready(function () {
+    $('input:radio').change(function () {
+      console.log($(this).attr("name"))
+      var selection = $(this).attr("id")
+      console.log(selection)
 
-  // Obtain a user pic for sending to MS Azure facial recog API
-  const player = document.getElementById('player');
-  const canvas = document.getElementById('canvas');
-  const context = canvas.getContext('2d');
-  const captureButton = document.getElementById('capture');
-  const constraints = {
-    video: true,
-  };
-  captureButton.addEventListener('click', () => {
-    // Draw the video frame to the canvas.
-    context.drawImage(player, 0, 0, canvas.width, canvas.height);
-    player.srcObject.getVideoTracks().forEach(track => track.stop());
-  }
-  );
-  // Attach the video stream to the video element and autoplay.
-  navigator.mediaDevices.getUserMedia(constraints)
-    .then((stream) => {
-      player.srcObject = stream;
+      var musicChoice = $(selection).val("id")
+      var weatherPref = $(selection).val("id")
+      var mood = $(selection).val("id")
+      database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
     });
+  });
 });
+
+// Obtain a user pic for sending to MS Azure facial recog API
+const player = document.getElementById('player');
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
+const captureButton = document.getElementById('capture');
+const constraints = {
+  video: true,
+};
+captureButton.addEventListener('click', () => {
+  // Draw the video frame to the canvas.
+  context.drawImage(player, 0, 0, canvas.width, canvas.height);
+  player.srcObject.getVideoTracks().forEach(track => track.stop());
+}
+);
+// Attach the video stream to the video element and autoplay.
+navigator.mediaDevices.getUserMedia(constraints)
+  .then((stream) => {
+    player.srcObject = stream;
+  });
 
 //Need to feed facial snapshot to MS Azure API and receive value back from API and storeanalyzed photo as a variable
 //var sourceImageUrlcis input, var facialMood is analyzed API output (where to put this variable below?)
@@ -220,7 +229,6 @@ $("#returnedPlaylist").actualCallback;
 
 //function genPlaylist() {
   //var userPlaylist = $("#returnedPlaylist");
-  //musicPref + wxPref + mood + facialMood = userPlaylist;
+  //musicChoice + wxPref + mood + facialMood = userPlaylist;
 //};
 //genPlaylist();
-//});

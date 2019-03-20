@@ -23,15 +23,12 @@ $(document).ready(function () {
   /// Initialize Firebase with data
   firebase.initializeApp(config);
   var database = firebase.database();
-  //var weatherType;
-  database.ref().set({ musicChoice: [], weatherPref: [], mood: [] });
-  database.ref().on("value", function (snapshot) {
-    console.log(snapshot.val())
-  })
+  var ref = firebase.storage().ref();
+
+  
 
   // Get user input preferences on radio button select and store as variables
 
-  $(document).ready(function () {
     $('input:radio').change(function () {
       console.log($(this).attr("name"))
       var selection = $(this).attr("id")
@@ -42,33 +39,18 @@ $(document).ready(function () {
       var mood = $(selection).val("id")
       database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
     });
-  });
-});
 
-// Obtain a user pic for sending to MS Azure facial recog API
-const player = document.getElementById('player');
-const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2d');
-const captureButton = document.getElementById('capture');
-const constraints = {
-  video: true,
-};
-captureButton.addEventListener('click', () => {
-  // Draw the video frame to the canvas.
-  context.drawImage(player, 0, 0, canvas.width, canvas.height);
-  player.srcObject.getVideoTracks().forEach(track => track.stop());
-}
-);
-// Attach the video stream to the video element and autoplay.
-navigator.mediaDevices.getUserMedia(constraints)
-  .then((stream) => {
-    player.srcObject = stream;
-  });
+
+// var imageUrl = imageSrc
+
+
+
 
 //Need to feed facial snapshot to MS Azure API and receive value back from API and storeanalyzed photo as a variable
 //var sourceImageUrlcis input, var facialMood is analyzed API output (where to put this variable below?)
 
-function processImage() {
+function processImage(image) {
+  console.log(image)
   // Replace <Subscription Key> with your valid subscription key.
   var subscriptionKey = "9f64fbd89816421ca1fc4e7bce4311c1";
   var uriBase =
@@ -82,9 +64,6 @@ function processImage() {
       "neutral, happiness, sadness, fear : 0" + "neutral, happiness, sadness, fear"
   };
 
-  // Display the image.
-  var sourceImageUrl = document.getElementById("canvas").value;
-  document.querySelector("#canvas").src = sourceImageUrl;
 
   //===============AJAX Calls===========================//
   // Perform the REST API call.
@@ -98,12 +77,15 @@ function processImage() {
     },
     type: "POST",
     // Request body.
-    data: '{"url": ' + '"' + sourceImageUrl + '"}',
+    processData: false,
+    data: image
   }).done(function (data) {
+    console.log(data)
     // Show formatted JSON on webpage.
     $("#responseTextArea").val(JSON.stringify(data, null, 2));
-    console.log(data)
+   
   }).fail(function (jqXHR, textStatus, errorThrown) {
+    console.log(jqXHR,textStatus,errorThrown);
     // Display error message.
     var errorString = (errorThrown === "") ?
       "Error. " : errorThrown + " (" + jqXHR.status + "): ";
@@ -111,10 +93,58 @@ function processImage() {
       "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
         jQuery.parseJSON(jqXHR.responseText).message :
         jQuery.parseJSON(jqXHR.responseText).error.message;
-    alert(errorString);
+     alert(errorString);
   });
 };
-;
+
+
+
+
+function convertCanvasToImage(canvas) {
+
+  var image = new Image();
+  var imageSrc = canvas.toDataURL("image/png");
+  console.log(imageSrc);
+  image.src = imageSrc;   
+  console.log(image);
+
+  ref.putString(image, 'data_url').then(function(snapshot){
+    console.log(snapshot.val())
+  })
+  return image;
+};
+
+// Obtain a user pic for sending to MS Azure facial recog API
+const player = document.getElementById('player');
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext('2d');
+const captureButton = document.getElementById('capture');
+const constraints = {
+  video: true,
+};
+// console.log(canvas)
+// console.log(context)
+captureButton.addEventListener('click', (photoCapture) => {
+  console.log(photoCapture)
+  const canvas = document.getElementById('canvas');
+  // Draw the video frame to the canvas
+  context.drawImage(player, 0, 0, canvas.width, canvas.height);
+  convertCanvasToImage(canvas);
+  // canvas.toBlob(function(blob){
+
+  // });
+  player.srcObject.getVideoTracks().forEach(track => track.stop());
+});
+// Attach the video stream to the video element and autoplay.
+navigator.mediaDevices.getUserMedia(constraints)
+  .then((stream) => {
+    player.srcObject = stream;
+  });
+
+
+
+
+
 
 // Get current wx from OpenWeather API
 function getWeather() {
@@ -174,6 +204,7 @@ $("#submit").on("click", function (event) {
   event.preventDefault();
   $("#postal-code").html("")
   getWeather();
+  processImage();
 });
 
 //Algorithm to correlate user info to generate playlist
@@ -227,8 +258,9 @@ $("#returnedPlaylist").actualCallback;
 
 // createPlaylist('mymood', 'My playlist!', { public : false }).then();
 
-//function genPlaylist() {
+//function datagenPlaylist() {
   //var userPlaylist = $("#returnedPlaylist");
   //musicChoice + wxPref + mood + facialMood = userPlaylist;
 //};
 //genPlaylist();
+})

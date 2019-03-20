@@ -29,6 +29,7 @@ body {
     color: white;
     
     }
+
     .card-wrap {
     
         padding: 10px;
@@ -43,8 +44,13 @@ font-family: 'Roboto', sans-serif;
 */
 
 #submit {
-    background-color: transparent;
+    background-color:  rgb(193, 193, 215, 0.2);
     border: 1px solid  rgb(193, 193, 215);
+}
+
+#submitYourChoice {
+    background-color:  rgb(193, 193, 215, 0.2);
+    border: 1px solid;
 }
 
 #postal-code {
@@ -55,10 +61,15 @@ font-family: 'Roboto', sans-serif;
 #submit:hover {
     background-color: rgb(193, 193, 215, 0.6);
 }
+#submitYourChoice:hover {
+    background-color: rgb(193, 193, 215, 0.6);
+}
 
 #postal-code:hover {
     background-color: rgb(193, 193, 215, 0.6);
 }
+
+
 
 .form-control::-webkit-input-placeholder { color: lightgray; }  /* WebKit, Blink, Edge */
 .form-control:-moz-placeholder { color: lightgray; }  /* Mozilla Firefox 4 to 18 */
@@ -86,7 +97,10 @@ font-family: 'Roboto', sans-serif;
 #capture {
     margin-left: 10px;
     position:relative;
-    background: lightblue;
+    background-color: rgb(193, 193, 215, 0.6);
+    border-color: transparent;
+    border-radius: 25px;
+    
 }
 #canvas {
     float: right;
@@ -95,6 +109,12 @@ font-family: 'Roboto', sans-serif;
 h4 {
     font-size: 24px;
     text-decoration: underline;
+}
+#play-list-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 75px;
 }
 
 /* RADIO BUTTONS*/

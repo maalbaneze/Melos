@@ -143,6 +143,7 @@ function getWeather() {
     }
     if (weatherType === "Cloud") {
       $('body').css('background-image', 'url(images/clouds.jpg)');
+  
     }
     if (weatherType === "Thunder") {
       $('body').css('background-image', 'url(images/thunder.jpg)');
@@ -179,6 +180,7 @@ $("#submit").on("click", function (event) {
   event.preventDefault();
   $("#postal-code").html("")
   getWeather();
+  $("#wxPref").empty();
 });
 
 //Algorithm to correlate user info to generate playlist

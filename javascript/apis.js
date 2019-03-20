@@ -43,7 +43,9 @@ $(document).ready(function () {
       database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
     });
   });
+
 });
+
 
 // Obtain a user pic for sending to MS Azure facial recog API
 const player = document.getElementById('player');
@@ -57,7 +59,10 @@ captureButton.addEventListener('click', () => {
   // Draw the video frame to the canvas.
   context.drawImage(player, 0, 0, canvas.width, canvas.height);
   player.srcObject.getVideoTracks().forEach(track => track.stop());
+
+  // $("#player").toggle(500);
 }
+
 );
 // Attach the video stream to the video element and autoplay.
 navigator.mediaDevices.getUserMedia(constraints)
@@ -134,7 +139,7 @@ function getWeather() {
       $('body').css('background-image', 'url(images/sun.jpg)');
       // $("#header-name").css("text-shadow", "
       // -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
-      $('#header-name').css('text-shadow','black -5px 5px 1px');
+      $('#header-name').css('text-shadow', 'black -5px 5px 1px');
     }
     if (weatherType === "Cloud") {
       $('body').css('background-image', 'url(images/clouds.jpg)');
@@ -224,6 +229,80 @@ this.createPlaylist = function (playlistName, options, callback) {
 };
 
 $("#returnedPlaylist").actualCallback;
+
+
+$("#media-row1").click(function(){
+  $("#media-row").hide(1000);
+  $("#media-row1").hide();
+  $("#media-row2").show();
+  $("#media-playlist2").hide();
+  $("#media-playlist1").show();
+});
+
+$("#media-row2").click(function(){
+  $("#media-row").show(1000);
+  $("#play-list-container").hide(1000);
+  $("#media-playlist2").hide();
+  $("#media-playlist1").show();
+  $("#media-row1").show();
+  $("#media-row2").hide();
+
+});
+
+
+$("#media-playlist1").click(function(){
+  $("#play-list-container").show(1000);
+  $("#media-row").hide(1000);
+  $("#media-row1").hide();
+  $("#media-row2").show();
+  $("#media-playlist2").show();
+  $("#media-playlist1").hide();
+});
+
+
+$("#media-playlist2").click(function(){
+  $("#play-list-container").hide(1000);
+  $("#media-row2").show();
+  $("#media-row1").hide();
+  $("#media-playlist2").hide();
+  $("#media-playlist1").show();
+});
+
+
+
+document.getElementById("submitYourChoice").onclick=function() {
+
+  var selectedMusic = document.forms.yourChoiceForm.musicPref.value;
+  var selectedWeather = document.forms.yourChoiceForm.wxPref.value;
+  var selectedMood = document.forms.yourChoiceForm.moodPref.value;
+
+  if(selectedMusic=="rockVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
+    alert("YOUR PLAYING ROCK AND CLEAR")
+  }
+  else if(selectedMusic=="rockVal" && selectedWeather=="drizzleVal" && selectedMood=="greatVal"){ 
+    
+    alert(selectedWeather+selectedMusic+selectedMood)}
+
+  else if(selectedMusic=="rockVal" && selectedWeather=="drizzleVal" && selectedMood=="greatVal"){ 
+    
+      alert(selectedWeather+selectedMusic+selectedMood)}
+};
+
+// document.getElementById("media-row1").onclick=function(){
+
+//   document.getElementById("media-row").style.display="none";
+//   document.getElementById("media-row1").style.display="none";
+//   document.getElementById("media-row2").style.display="";
+
+// }
+
+// document.getElementById("media-row2").onclick=function(){
+//   document.getElementById("media-row").style.display="";
+//   document.getElementById("media-row1").style.display="";
+//   document.getElementById("media-row2").style.display="none";
+
+// }
+
 
 // createPlaylist('mymood', 'My playlist!', { public : false }).then();
 

@@ -23,15 +23,12 @@ $(document).ready(function () {
   /// Initialize Firebase with data
   firebase.initializeApp(config);
   var database = firebase.database();
-  //var weatherType;
-  database.ref().set({ musicChoice: [], weatherPref: [], mood: [] });
-  database.ref().on("value", function (snapshot) {
-    console.log(snapshot.val())
-  })
+  var ref = firebase.storage().ref();
+
+  
 
   // Get user input preferences on radio button select and store as variables
 
-  $(document).ready(function () {
     $('input:radio').change(function () {
       console.log($(this).attr("name"))
       var selection = $(this).attr("id")
@@ -42,10 +39,6 @@ $(document).ready(function () {
       var mood = $(selection).val("id")
       database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
     });
-  });
-
-});
-
 
 // Obtain a user pic for sending to MS Azure facial recog API
 const player = document.getElementById('player');
@@ -55,23 +48,47 @@ const captureButton = document.getElementById('capture');
 const constraints = {
   video: true,
 };
-captureButton.addEventListener('click', () => {
-  // Draw the video frame to the canvas.
+// console.log(canvas)
+// console.log(context)
+captureButton.addEventListener('click', (photoCapture) => {
+  console.log(photoCapture)
+  const canvas = document.getElementById('canvas');
+  // Draw the video frame to the canvas
   context.drawImage(player, 0, 0, canvas.width, canvas.height);
+  canvas.toBlob(function(blob){
+    console.log(blob)
+    uploadToFirebase(blob)
+  });
+  // convertCanvasToImage(canvas);
   player.srcObject.getVideoTracks().forEach(track => track.stop());
-
-  // $("#player").toggle(500);
-}
-
-);
+});
 // Attach the video stream to the video element and autoplay.
 navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
     player.srcObject = stream;
   });
+function uploadToFirebase(photo){
+    // this code handles watson facial recongition
+    // use photo to pass into api call
+    const file = photo;
+    console.log(photo)
+    // const name = (+new Date()) + '-' + file.name;
+    // var reader = new FileReader();
+    // reader.addEventListener('load', readFile);
+    // console.log(reader.readAsText(file));
 
-//Need to feed facial snapshot to MS Azure API and receive value back from API and storeanalyzed photo as a variable
-//var sourceImageUrlcis input, var facialMood is analyzed API output (where to put this variable below?)
+    const metadata = {
+        contentType: file.type
+    };
+    const task = ref.child("image").put(photo, metadata);
+    task
+    .then(snapshot => snapshot.ref.getDownloadURL())
+    .then((url) => {
+        console.log(url);
+        // document.querySelector('#someImageTagID').src = url;
+    })
+    .catch(console.error);
+}
 
 function processImage() {
   // Replace <Subscription Key> with your valid subscription key.
@@ -83,19 +100,16 @@ function processImage() {
   var params = {
     "returnFaceId": "true",
     "returnFaceLandmarks": "false",
-    "windowFaceDistribution":
-      "neutral, happiness, sadness, fear : 0" + "neutral, happiness, sadness, fear"
+    "returnFaceAttributes":
+        "age,gender,headPose,smile,facialHair,glasses,emotion," +
+        "hair,makeup,occlusion,accessories,blur,exposure,noise"
   };
 
-  // Display the image.
-  var sourceImageUrl = document.getElementById("canvas").value;
-  document.querySelector("#canvas").src = sourceImageUrl;
-
+  var sourceImageUrl = "https://firebasestorage.googleapis.com/v0/b/melos-71bca.appspot.com/o/image?alt=media&token=2e5e69ad-907a-4ff3-b249-4177bb19864f"
   //===============AJAX Calls===========================//
   // Perform the REST API call.
   $.ajax({
     url: uriBase + "?" + $.param(params),
-
     // Request headers.
     beforeSend: function (xhrObj) {
       xhrObj.setRequestHeader("Content-Type", "application/json");
@@ -103,12 +117,15 @@ function processImage() {
     },
     type: "POST",
     // Request body.
+    // processData: false,
     data: '{"url": ' + '"' + sourceImageUrl + '"}',
   }).done(function (data) {
-    // Show formatted JSON on webpage.
-    $("#responseTextArea").val(JSON.stringify(data, null, 2));
     console.log(data)
+    // Show formatted JSON on webpage.
+    // $("#responseTextArea").val(JSON.stringify(data, null, 2));
+   
   }).fail(function (jqXHR, textStatus, errorThrown) {
+    console.log(jqXHR,textStatus,errorThrown);
     // Display error message.
     var errorString = (errorThrown === "") ?
       "Error. " : errorThrown + " (" + jqXHR.status + "): ";
@@ -116,10 +133,9 @@ function processImage() {
       "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
         jQuery.parseJSON(jqXHR.responseText).message :
         jQuery.parseJSON(jqXHR.responseText).error.message;
-    alert(errorString);
+     alert(errorString);
   });
 };
-;
 
 // Get current wx from OpenWeather API
 function getWeather() {
@@ -180,7 +196,11 @@ $("#submit").on("click", function (event) {
   event.preventDefault();
   $("#postal-code").html("")
   getWeather();
+<<<<<<< HEAD
   $("#wxPref").empty();
+=======
+  processImage();
+>>>>>>> 321656d4492ba78b6dbb5bab4c477c6a6385d3e6
 });
 
 //Algorithm to correlate user info to generate playlist
@@ -272,7 +292,7 @@ $("#media-playlist2").click(function(){
 
 
 
-document.getElementById("submitYourChoice").onclick=function() {
+document.getElementById("submit").onclick=function() {
 
   var selectedMusic = document.forms.yourChoiceForm.musicPref.value;
   var selectedWeather = document.forms.yourChoiceForm.wxPref.value;
@@ -287,6 +307,10 @@ document.getElementById("submitYourChoice").onclick=function() {
     $("#media-playlist1").hide();
 
   };
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 321656d4492ba78b6dbb5bab4c477c6a6385d3e6
   if(selectedMusic=="rockVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
     $("#playlist").attr("src","https://open.spotify.com/embed/user/sonymusicfinland/playlist/5BygwTQ3OrbiwVsQhXFHMz").toggle(2000).toggle(1000);;
   }
@@ -829,8 +853,9 @@ document.getElementById("submitYourChoice").onclick=function() {
 
 // createPlaylist('mymood', 'My playlist!', { public : false }).then();
 
-//function genPlaylist() {
+//function datagenPlaylist() {
   //var userPlaylist = $("#returnedPlaylist");
   //musicChoice + wxPref + mood + facialMood = userPlaylist;
 //};
 //genPlaylist();
+})

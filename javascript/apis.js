@@ -19,92 +19,6 @@ $(document).ready(function () {
     storageBucket: "melos-71bca.appspot.com",
     messagingSenderId: "197405510515"
   };
-<<<<<<< HEAD
-  // get user inputs
-  $(".form-check-input").click(function(){
-  
-})
-
-
-$('#check').on('change', function() {
-  var musicPref = $("#musicPref").val();
-  var weatherPref = $("#wxPref").val();
-  var mood = $("#moodPref").val();
-  var val = this.checked ? this.value : '';
-  
-console.log(val);
-console.log(weatherPref);
-console.log(mood);
-  
-});
-  firebase.initializeApp(config);
-  var database = firebase.database();
-  var weatherType;
-
-  //===============AJAX===========================//
-  function getWeather() {
-    var zipCode = $('#postal-code').val();
-    console.log(zipCode)
-    $.ajax({
-
-      url: "https://api.openweathermap.org/data/2.5/forecast?zip=" + zipCode + ",us&appid=8caea81085fc66df0fb0c7d61c6772b8",
-      method: 'GET',
-    }).then(function (response) {
-      console.log(response)
-
-      weatherType = response.list[0].weather[0].main;
-
-      if (weatherType === "Clear") {
-        $('body').css('background-image', 'url(images/sun.jpg)');
-        $("#playlist").attr("src"," https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DXdPec7aLTmlC");
-      }
-      if (weatherType === "Cloud") {
-        $('body').css('background-image', 'url(images/clouds.jpg)');
-        $("#playlist").attr("src"," https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DWT6MhXz0jw61");
-      }
-      if (weatherType === "Thunder") {
-        $('body').css('background-image', 'url(images/thunder.jpg)');
-          $("#playlist").attr("src","https://open.spotify.com/embed/user/sonymusicfinland/playlist/5BygwTQ3OrbiwVsQhXFHMz");
-      }
-      if (weatherType === "Rain") {
-        $('body').css('background-image', 'url(images/heavy-rain.jpg)');
-          $("#playlist").attr("src"," https://open.spotify.com/embed/user/1233564303/playlist/0NcQtKxtJUS1tzzliuAUzE");
-      }
-      if (weatherType === "Drizzle") {
-        $('body').css('background-image', 'url(images/heavy-rain.jpg)');
-          $("#playlist").attr("src","https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX1s9knjP51Oa");
-      }
-      if (weatherType === "Snow") {
-        $('body').css('background-image', 'url(images/heavy-rain.jpg)');
-          $("#playlist").attr("src","https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX6ziVCJnEm59");
-      }
-
-
-
-
-      for (let i = 0; i < response.list.length; i += 3) {
-        var cloud = response.list[i].clouds.all;
-
-        console.log(cloud);
-
-        var weatherDescription = response.list[i].weather[0].main;
-        console.log(weatherDescription)
-
-        var temperature = response.list[i].main.temp;
-        console.log(temperature)
-
-        var date = response.list[i].dt_txt;
-        console.log(date);
-        database.ref().set("weather:", weather)
-      }
-    })
-  };
-  //corralate user info to generate playlist
-  $("#submit").on("click", function (event) {
-    event.preventDefault();
-    $("#postal-code").html("")
-    getWeather();
-=======
 
   /// Initialize Firebase with data
   firebase.initializeApp(config);
@@ -154,7 +68,6 @@ captureButton.addEventListener('click', () => {
 navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
     player.srcObject = stream;
->>>>>>> 023a7b9186606a23dceedd3a19bd852084be576e
   });
 
 //Need to feed facial snapshot to MS Azure API and receive value back from API and storeanalyzed photo as a variable

@@ -284,8 +284,6 @@ document.getElementById("submitYourChoice").onclick=function() {
     $("#media-playlist2").show();
     $("#media-playlist1").hide();
 
-<<<<<<< HEAD
-=======
   };
   showPlayList();
   if(selectedMusic=="rockVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
@@ -810,7 +808,6 @@ document.getElementById("submitYourChoice").onclick=function() {
   //============================
 
 
->>>>>>> 3d65fc553ab026ed48b8133da2063ab788b0597b
 };
 
 // document.getElementById("media-row1").onclick=function(){

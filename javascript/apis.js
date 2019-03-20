@@ -159,7 +159,6 @@ function getWeather() {
     }
     if (weatherType === "Cloud") {
       $('body').css('background-image', 'url(images/clouds.jpg)');
-  
     }
     if (weatherType === "Thunder") {
       $('body').css('background-image', 'url(images/thunder.jpg)');
@@ -196,11 +195,7 @@ $("#submit").on("click", function (event) {
   event.preventDefault();
   $("#postal-code").html("")
   getWeather();
-<<<<<<< HEAD
-  $("#wxPref").empty();
-=======
   processImage();
->>>>>>> 321656d4492ba78b6dbb5bab4c477c6a6385d3e6
 });
 
 //Algorithm to correlate user info to generate playlist
@@ -307,10 +302,6 @@ document.getElementById("submit").onclick=function() {
     $("#media-playlist1").hide();
 
   };
-<<<<<<< HEAD
-=======
-  
->>>>>>> 321656d4492ba78b6dbb5bab4c477c6a6385d3e6
   if(selectedMusic=="rockVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
     $("#playlist").attr("src","https://open.spotify.com/embed/user/sonymusicfinland/playlist/5BygwTQ3OrbiwVsQhXFHMz").toggle(2000).toggle(1000);;
   }
@@ -853,9 +844,8 @@ document.getElementById("submit").onclick=function() {
 
 // createPlaylist('mymood', 'My playlist!', { public : false }).then();
 
-//function datagenPlaylist() {
+//function genPlaylist() {
   //var userPlaylist = $("#returnedPlaylist");
   //musicChoice + wxPref + mood + facialMood = userPlaylist;
 //};
 //genPlaylist();
-})

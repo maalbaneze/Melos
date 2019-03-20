@@ -97,9 +97,26 @@ font-family: 'Roboto', sans-serif;
 #capture {
     margin-left: 10px;
     position:relative;
-    background-color: rgb(193, 193, 215, 0.6);
+    background-color: rgb(193, 193, 215, 0.8);
     border-color: transparent;
-    border-radius: 25px;
+    border-radius: 20px;
+    
+}
+
+#capture1 {
+    margin-left: 10px;
+    position:relative;
+    background-color: rgb(193, 193, 215, 0.8);
+    border-color: transparent;
+    border-radius: 20px;
+    
+}
+#capture2 {
+    margin-left: 10px;
+    position:relative;
+    background-color: rgb(193, 193, 215, 0.8);
+    border-color: transparent;
+    border-radius: 20px;
     
 }
 #canvas {

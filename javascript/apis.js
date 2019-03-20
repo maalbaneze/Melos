@@ -276,16 +276,6 @@ document.getElementById("submitYourChoice").onclick=function() {
   var selectedWeather = document.forms.yourChoiceForm.wxPref.value;
   var selectedMood = document.forms.yourChoiceForm.moodPref.value;
 
-  if(selectedMusic=="rockVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
-    alert("YOUR PLAYING ROCK AND CLEAR")
-  }
-  else if(selectedMusic=="rockVal" && selectedWeather=="drizzleVal" && selectedMood=="greatVal"){ 
-    
-    alert(selectedWeather+selectedMusic+selectedMood)}
-
-  else if(selectedMusic=="rockVal" && selectedWeather=="drizzleVal" && selectedMood=="greatVal"){ 
-    
-      alert(selectedWeather+selectedMusic+selectedMood)}
 };
 
 // document.getElementById("media-row1").onclick=function(){

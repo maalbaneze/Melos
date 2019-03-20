@@ -86,6 +86,7 @@ font-family: 'Roboto', sans-serif;
 #capture {
     margin-left: 10px;
     position:relative;
+    background: lightblue;
 }
 #canvas {
     float: right;
@@ -194,4 +195,10 @@ h4 {
 .icheck-wetasphalt > input:first-child:checked + input[type="hidden"] + label::before {
     background-color: #34495e;
     border-color: #34495e;
+}
+.mb-0 {
+    color: rgb(0, 255, 115);
+}
+.blockquote-footer {
+    color: rgba(237, 13, 13, 0.653);
 }

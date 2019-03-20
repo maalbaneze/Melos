@@ -27,14 +27,11 @@
 <body>
 
     <!-- Page header -->
-    <!-- changed the header - dennis -->
     <div id="title-header" class="jumbotron jumbotron-fluid" style="background-color: rgb(193, 193, 215, 0.3)">
-
         <div class="container">
             <h1 id="header-name"><strong>Melos...</strong></h1>
             <p class="lead">Your music source based on your tastes, your mood, and your weather!</p>
         </div>
-
     </div>
 
     <!-- User account login form (MOVE THIS TO UPPER RIGHT OF PAGE), if we use it
@@ -69,218 +66,186 @@
         </div>
     </div> -->
 
-    <!-- User music preferences form (UPDATE USER CHOICE OPTIONS) -->
+    <!-- User music preferences form -->
 
     <div class=container>
-
         <div class="row">
-            <!--  -->
-            <div class="col-md-6">             
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 card-background">
+                            <div class="card-header text-white"><b>Your Music Preference</b></div>
+                            <div class="card-wrap">
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="musicPref" id="rock"
+                                        value="option1">
+                                    <label class="form-check-label" for="rock">Rock</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input radio-act" type="radio" name="musicPref" id="R&B"
+                                        value="option2">
+                                    <label class="form-check-label" for="R&B">R&B</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="musicPref" id="hip-hop"
+                                        value="option3">
+                                    <label class="form-check-label" for="hip-hop">HipHop</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="musicPref" id="jazz"
+                                        value="option4">
+                                    <label class="form-check-label" for="jazz">Jazz</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="musicPref" id="electronica"
+                                        value="option5">
+                                    <label class="form-check-label" for="electronica">Electronica</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="musicPref" id="country"
+                                        value="option6">
+                                    <label class="form-check-label" for="country">Country</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="musicPref" id="alternative"
+                                        value="option7">
+                                    <label class="form-check-label" for="alternative">Alternative</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="musicPref" id="random"
+                                        value="option8">
+                                    <label class="form-check-label" for="random">Random</label>
+                                </div>
+                            </div> <!-- cardbody -->
+                        </div> <!-- cardmb-->
+                    </div><!-- col-md-4-->
 
-             <div class="row">
+                    <!-- User weather inputs (likes/dislikes) form -->
+                    <div class="col-md-4">
+                        <div class="card mb-4 card-background">
+                            <div class="card-header text-white"><b>Weather</b></div>
+                            <div class="card-wrap">
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="wxPref" id="clear"
+                                        value="option1">
+                                    <label class="form-check-label" for="clear">Clear</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="wxPref" id="drizzle"
+                                        value="option2">
+                                    <label class="form-check-label" for="drizzle">Drizzle</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="wxPref" id="rain"
+                                        value="option3">
+                                    <label class="form-check-label" for="rain">Rain</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="wxPref" id="stormy"
+                                        value="option4">
+                                    <label class="form-check-label" for="stormy">Thunderstorm</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="wxPref" id="clouds"
+                                        value="option5">
+                                    <label class="form-check-label" for="clouds">Clouds</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="wxPref" id="snow"
+                                        value="option6">
+                                    <label class="form-check-label" for="snow">Snow</label>
+                                </div>
+                            </div> <!-- cardbody -->
+                        </div> <!-- cardmb-->
+                    </div> <!-- col-md-4-->
 
-                <div class="col-md-4">
-
-                    <div class="card mb-4 card-background">
-                        <div class="card-header text-white"><b>Your Music Preference</b></div>
-                        <div class="card-wrap">
-
-
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="musicPref" id="rock" value="option1">
-                                <label class="form-check-label" for="rock">Rock</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input radio-act" type="radio" name="musicPref" id="R&B" value="option2">
-                                <label class="form-check-label" for="R&B">R&B</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="musicPref" id="hip-hop" value="option3">
-                                <label class="form-check-label" for="hip-hop">HipHop</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="musicPref" id="jazz" value="option4">
-                                <label class="form-check-label" for="jazz">Jazz</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="musicPref" id="electronica"
-                                value="option5">
-                                <label class="form-check-label" for="electronica">Electronica</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="musicPref" id="country" value="option6">
-                                <label class="form-check-label" for="country">Country</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="musicPref" id="alternative"
-                                value="option7">
-                                <label class="form-check-label" for="alternative">Alternative</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="musicPref" id="random" value="option8">
-                                <label class="form-check-label" for="random">Random</label>
-                            </div>
-
-                        </div> <!-- cardbody -->
-
-                    </div> <!-- cardmb-->
-
-
-                </div><!-- col-md-4-->
-
-                <!-- User weather inputs (likes/dislikes) form -->
-                <div class="col-md-4">
-                    <div class="card mb-4 card-background">
-
-
-                        <div class="card-header text-white"><b>Weather</b></div>
-                        <div class="card-wrap">
-
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="wxPref" id="clear" value="option1">
-                                <label class="form-check-label" for="clear">Clear</label>
-                            </div>
-
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="wxPref" id="drizzle" value="option2">
-                                <label class="form-check-label" for="drizzle">Drizzle</label>
-                            </div>
-
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="wxPref" id="rain" value="option3">
-                                <label class="form-check-label" for="rain">Rain</label>
-                            </div>
-
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="wxPref" id="stormy" value="option4">
-                                <label class="form-check-label" for="stormy">Thunderstorm</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="wxPref" id="clouds" value="option5">
-                                <label class="form-check-label" for="clouds">Clouds</label>
-                            </div>
-
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="wxPref" id="snow" value="option6">
-                                <label class="form-check-label" for="snow">Snow</label>
-                            </div>
-
-
-                        </div> <!-- cardbody -->
-                    </div> <!-- cardmb-->
-                </div> <!-- col-md-4-->
-
-                <div class="col-md-4">
-                    <div class="card-background card mb-4">
-                        <div class="card-header"><b>Current Mood</b></div>
-                        <div class="card-wrap">
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="moodPref" id="great" value="option1">
-                                <label class="form-check-label" for="great">Feeling great!</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="moodPref" id="ok" value="option2">
-                                <label class="form-check-label" for="ok">I'm okay</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="moodPref" id="blah" value="option3">
-                                <label class="form-check-label" for="blah">Got the blahs</label>
-                            </div>
-                            <div class="form-check radio icheck-wetasphalt">
-                                <input class="form-check-input" type="radio" name="moodPref" id="bummed" value="option4">
-                                <label class="form-check-label" for="bummed">Bummed out</label>
+                    <div class="col-md-4">
+                        <div class="card-background card mb-4">
+                            <div class="card-header"><b>Current Mood</b></div>
+                            <div class="card-wrap">
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="moodPref" id="great"
+                                        value="option1">
+                                    <label class="form-check-label" for="great">Feeling great!</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="moodPref" id="ok"
+                                        value="option2">
+                                    <label class="form-check-label" for="ok">I'm okay</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="moodPref" id="blah"
+                                        value="option3">
+                                    <label class="form-check-label" for="blah">Got the blahs</label>
+                                </div>
+                                <div class="form-check radio icheck-wetasphalt">
+                                    <input class="form-check-input" type="radio" name="moodPref" id="bummed"
+                                        value="option4">
+                                    <label class="form-check-label" for="bummed">Bummed out</label>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div> <!-- ROW -->
 
-
-                </div>
-
-
-
-                
                 <!-- User current location-->
 
-            </div> <!-- ROW -->
-
-
-
-
-
-            <div id="user-location"class="row">
-                <div class="col-md-12" style="max-width: 28rem;">
-
-            <!-- new button type -->
-            <form class="form1">
-
-        <div id="country" class="input-group mb-3">
-            
-              <input id="postal-code" type="text" class="form-control" placeholder="Submit Zip or Postal Code" aria-label="Submit Zip or Postal Code" aria-describedby="button-addon2">
-              <div class="input-group-append">
-                <button id="submit" class="btn btn-info" type="submit" >Submit</button>
-            </div>
-            
-
-        </div>
-        </form>
-                         <!-- <div class="card mb-4">
-                            <div class="card-header text-center text-white bg-secondary"><b>Current Location</b></div>
-
-                            <div class="card-body">
-                                <div id="country">
-                                <label>Zip or Postal Code</label>
-                                <input id="postal-code" type="text" class="form-control" name="postal-code">
-                                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                <div id="user-location" class="row">
+                    <div class="col-md-12" style="max-width: 28rem;">
+                        <!-- new button type -->
+                        <form class="form1">
+                            <div id="country" class="input-group mb-3">
+                                <input id="postal-code" type="text" class="form-control"
+                                    placeholder="Submit Zip or Postal Code" aria-label="Submit Zip or Postal Code"
+                                    aria-describedby="button-addon2">
+                                <div class="input-group-append">
+                                    <button id="submit" class="btn btn-info" type="submit">Submit</button>
                                 </div>
-
                             </div>
-                        </div> -->
+                        </form>
+                    </div>
                 </div>
             </div>
 
-        </div>
-
-        <div class="col-md-6">
-            <div class="media row">
-                <div class="col-md-6">
-                 <canvas id="canvas" width=240 height=180></canvas>
-                </div> 
-                <div class="col-md-6">
-                <video id="player" controls></video>
-                <div class="media-container">
-            <button class="btn" type="button" id="capture"><img src="images/Antu_folder-camera.png" width="50px" height="50px"></button>
+            <div class="col-md-6">
+                <div class="media row">
+                    <div class="col-md-6">
+                        <canvas id="canvas" width=240 height=180></canvas>
+                    </div>
+                    <div class="col-md-6">
+                        <video id="player" controls></video>
+                        <div class="media-container">
+                            <button class="btn" type="button" id="capture"><img src="images/Antu_folder-camera.png"
+                                    width="50px" height="50px"></button>
+                        </div>
+                    </div>
+                </div>
             </div>
-                </div> 
-            </div>
-            
         </div>
-
-        
     </div>
 
-</div>
     <!-- User link to face recogntiton app -->
-
     <div class=container id="face-app">
         <div class="row">
             <div class="col-md-12" style="max-width: 80rem;">
                 <div class="card mb-4">
-                    <div class="card-header text-center text-black bg-light"><b>Facial Mood Detector</b></div>
+                    <div class="card-header text-center text-white bg-dark"><b>Instructions</b></div>
                     <div class="card-body">
                         <div class="media-body">
-                            <h4 class="mt-1 text-center">Mood Recognition Check</h4>
+                            <h4 class="mt-1 text-center">Input Your Preferences and Take Your Picture!</h4>
                             <br>
-                            <p class="instructions">* This application uses your facial expression to detect your
-                                current
-                                emotional state. <br>
-                                * Press the play (right arrow) key to turn on your camera and, when ready, press the
-                                Capture
-                                button.
+                            <p class="instructions">* Select your music and weather preferences above and your current
+                                mood.<br>
+                                * Then allow this app acces to your camera to take your picture to use your facial
+                                expression to detect your current emotional state. <br>
+                                * Press the play (right arrow) key to turn on the video stream for your camera and, when
+                                ready, press the camera image button below it.<br>
                                 * It is important that you are genuine and do not try to deceive the application, or
                                 it will not help select the right playlist for your mood. <br>
                                 * This means you should not make any facial expression that is not indicative of how
-                                you feel. Just be how you feel.<br>
-                                * If you want to retake your picture, reload the page.</p>
+                                you feel. Just be...how you feel.<br>
+                                * If you want to retake your picture, reload the page.<br>
+                                * You don't have to use this feature and can skip it, if you so desire.</p>
                             <!-- <div class="media">
                                 <video id="player" controls></video>
                                 <button type="button" class="btn btn-primary" id="capture">Capture</button>
@@ -293,24 +258,6 @@
         </div>
     </div>
 
-    <!-- User current location-->
-    <!-- <div class=container id="user-location">
-        <div class="row">
-            <div class="col-md-12" style="max-width: 28rem;">
-                <div class="card mb-4">
-                    <div class="card-header text-center text-white bg-secondary"><b>Current Location</b></div>
-                    <div class="card-body">
-                        <div id="country">
-                            <label>Zip or Postal Code</label>
-                            <input id="postal-code" type="text" class="form-control" name="postal-code">
-                            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- Playlist goes here ONLY WHEN GENERATED -->
 
     <div class=container id="play-list">
@@ -320,7 +267,8 @@
                     <div class="card-header text-white bg-primary"><strong>Current Playlist</strong></div>
                     <div class="card-body">
                         <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="700"
-                            height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" id="returnedPlaylist"></iframe>
+                            height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"
+                            id="returnedPlaylist"></iframe>
                     </div>
                 </div>
             </div>

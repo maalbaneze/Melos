@@ -6,8 +6,8 @@
 //        URL: api.giphy.com
 //Spotify key:
 //        URL: 
-//MS Azure key:
-//        URL:  
+//MS Azure key: 9f64fbd89816421ca1fc4e7bce4311c1
+//        URL:  https://westus.api.cognitive.microsoft.com/face/v1.0/detect
 
 // Access Firebase 
 $(document).ready(function () {
@@ -31,19 +31,51 @@ $(document).ready(function () {
 
   // Get user input preferences on radio button select and store as variables
 
-  $(document).ready(function () {
-    $('input:radio').change(function () {
-      console.log($(this).attr("name"))
-      var selection = $(this).attr("id")
-      console.log(selection)
+  //   $('input:radio').change(function () {
 
-      var musicChoice = $(selection).val("id")
-      var weatherPref = $(selection).val("id")
-      var mood = $(selection).val("id")
-      database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
-    });
-  });
+  // $('input:radio').on("click", function (event) {
+  //   event.preventDefault;
+  //   var musicChoice = $("input[name='musicPref']:checked").val([]);
+  //   $("musicPref").attr(musicChoice)
+  //   var weatherPref = $("input[name='wxPref']:checked").val([]);
+  //   $("wxPref").attr(weatherPref)
+  //   var mood = $("input[name='moodPref']:checked").val([]);
+  //   $("moodPref").attr(mood)
+  // })
+
+  $('input:radio').on("click");
+  var assignCheckedBoxes = function () {
+    //var musicChoice = $("input[name='musicPref']:checked").val([]);
+    var musicChoice = document.container.musicPref.value;
+    $("musicPref").attr(musicChoice)
+    console.log(musicChoice)
+    //var weatherPref = $("input[name='wxPref']:checked").length;
+    var weatherPref = document.container.wxPref.value;
+    $("wxPref").attr(weatherPref)
+    console.log(weatherPref)
+    //var mood = $("input[name='moodPref']:checked").length;
+    var mood = document.container.moodPref.value;
+    $("moodPref").attr(mood)
+    console.log(mood)
+  }
+  assignCheckedBoxes();
+
+  // $('input:radio').on("click", assignCheckedBoxes);
+  // var selection = $(this).attr("id")
+  // console.log(selection)
+
+  // $("#submit").on("click", function (event) {
+  //   event.preventDefault();
+  //   $("#name").html("")
+  //   assignCheckedBoxes();
+  // });
+
+  // database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
+  // console.log()
+
 });
+// });
+
 
 // Obtain a user pic for sending to MS Azure facial recog API
 const player = document.getElementById('player');
@@ -65,7 +97,7 @@ navigator.mediaDevices.getUserMedia(constraints)
     player.srcObject = stream;
   });
 
-//Need to feed facial snapshot to MS Azure API and receive value back from API and storeanalyzed photo as a variable
+//Need to feed facial snapshot to MS Azure API and receive value back from API and store analyzed photo as a variable
 //var sourceImageUrlcis input, var facialMood is analyzed API output (where to put this variable below?)
 
 function processImage() {
@@ -114,7 +146,6 @@ function processImage() {
     alert(errorString);
   });
 };
-;
 
 // Get current wx from OpenWeather API
 function getWeather() {
@@ -134,7 +165,7 @@ function getWeather() {
       $('body').css('background-image', 'url(images/sun.jpg)');
       // $("#header-name").css("text-shadow", "
       // -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
-      $('#header-name').css('text-shadow','black -5px 5px 1px');
+      $('#header-name').css('text-shadow', 'black -5px 5px 1px');
     }
     if (weatherType === "Cloud") {
       $('body').css('background-image', 'url(images/clouds.jpg)');
@@ -181,10 +212,7 @@ $("#submit").on("click", function (event) {
 
 
 
-
-
-
-//Function to create a playlist based on user inputs and the current weather
+//Function to create a playlist 
 
 this.createPlaylist = function (playlistName, options, callback) {
   // In case someone is using a version where options parameter did not exist.
@@ -229,6 +257,6 @@ $("#returnedPlaylist").actualCallback;
 
 //function genPlaylist() {
   //var userPlaylist = $("#returnedPlaylist");
-  //musicChoice + wxPref + mood + facialMood = userPlaylist;
+  //musicChoice + wxPref + mood + facialMood + weatherDescription= userPlaylist;
 //};
 //genPlaylist();

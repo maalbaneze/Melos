@@ -5,14 +5,31 @@ body {
     background-repeat: repeat;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size: 100%;
+    position: relative;
 }
 
 /* changed the jumborton css -dennis*/
 .jumbotron { 
     font-family: Verdana, Tahoma, sans-serif; 
     color: white;
-    height: 150px;
+    height: 100px;
     padding: 0;
+    width: 100%;
+    position: fixed;
+}
+
+#logo-name {
+    font-family: Verdana, Tahoma, sans-serif; 
+    color: white;
+    height: 150px;
+    padding-top: 200px;
+}
+
+.logo-col {
+    display: flex;
+    justify-content: center;
+}
+.wrapper1 {
 }
 /* created css -dennis*/
 #header-name {
@@ -25,14 +42,26 @@ body {
 /*background-color: rgb(193, 193, 215, 0.3);*/
 .card-background {
     background-color: transparent;
-    width: 175px;
+    width: 250px;
     color: white;
-    
-    }
+    margin-top: 20px;
+ 
+  }
+
+.nav3 {
+
+    background-color: rgba(8, 8, 8, 0.6);
+}
+
+.navContent {
+    background-color: rgb(8, 8, 8, 0.4);
+
+}
 
     .card-wrap {
     
         padding: 10px;
+        width: 100%;
     }
 
     /*

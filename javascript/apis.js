@@ -270,7 +270,7 @@ $("#media-playlist2").click(function(){
 
 
 
-document.getElementById("submitYourChoice").onclick=function() {
+document.getElementById("submit").onclick=function() {
 
   var selectedMusic = document.forms.yourChoiceForm.musicPref.value;
   var selectedWeather = document.forms.yourChoiceForm.wxPref.value;
@@ -285,7 +285,7 @@ document.getElementById("submitYourChoice").onclick=function() {
     $("#media-playlist1").hide();
 
   };
-  showPlayList();
+  
   if(selectedMusic=="rockVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
     $("#playlist").attr("src","https://open.spotify.com/embed/user/sonymusicfinland/playlist/5BygwTQ3OrbiwVsQhXFHMz");
   }

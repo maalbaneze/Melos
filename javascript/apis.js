@@ -40,80 +40,6 @@ $(document).ready(function () {
       database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
     });
 
-
-// var imageUrl = imageSrc
-
-
-
-
-//Need to feed facial snapshot to MS Azure API and receive value back from API and storeanalyzed photo as a variable
-//var sourceImageUrlcis input, var facialMood is analyzed API output (where to put this variable below?)
-
-function processImage(image) {
-  console.log(image)
-  // Replace <Subscription Key> with your valid subscription key.
-  var subscriptionKey = "9f64fbd89816421ca1fc4e7bce4311c1";
-  var uriBase =
-    "https://westus.api.cognitive.microsoft.com/face/v1.0/detect";
-
-  // Request parameters.
-  var params = {
-    "returnFaceId": "true",
-    "returnFaceLandmarks": "false",
-    "windowFaceDistribution":
-      "neutral, happiness, sadness, fear : 0" + "neutral, happiness, sadness, fear"
-  };
-
-
-  //===============AJAX Calls===========================//
-  // Perform the REST API call.
-  $.ajax({
-    url: uriBase + "?" + $.param(params),
-
-    // Request headers.
-    beforeSend: function (xhrObj) {
-      xhrObj.setRequestHeader("Content-Type", "application/json");
-      xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-    },
-    type: "POST",
-    // Request body.
-    processData: false,
-    data: image
-  }).done(function (data) {
-    console.log(data)
-    // Show formatted JSON on webpage.
-    $("#responseTextArea").val(JSON.stringify(data, null, 2));
-   
-  }).fail(function (jqXHR, textStatus, errorThrown) {
-    console.log(jqXHR,textStatus,errorThrown);
-    // Display error message.
-    var errorString = (errorThrown === "") ?
-      "Error. " : errorThrown + " (" + jqXHR.status + "): ";
-    errorString += (jqXHR.responseText === "") ?
-      "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
-        jQuery.parseJSON(jqXHR.responseText).message :
-        jQuery.parseJSON(jqXHR.responseText).error.message;
-     alert(errorString);
-  });
-};
-
-
-
-
-function convertCanvasToImage(canvas) {
-
-  var image = new Image();
-  var imageSrc = canvas.toDataURL("image/png");
-  console.log(imageSrc);
-  image.src = imageSrc;   
-  console.log(image);
-
-  ref.putString(image, 'data_url').then(function(snapshot){
-    console.log(snapshot.val())
-  })
-  return image;
-};
-
 // Obtain a user pic for sending to MS Azure facial recog API
 const player = document.getElementById('player');
 const canvas = document.getElementById('canvas');
@@ -129,10 +55,11 @@ captureButton.addEventListener('click', (photoCapture) => {
   const canvas = document.getElementById('canvas');
   // Draw the video frame to the canvas
   context.drawImage(player, 0, 0, canvas.width, canvas.height);
-  convertCanvasToImage(canvas);
-  // canvas.toBlob(function(blob){
-
-  // });
+  canvas.toBlob(function(blob){
+    console.log(blob)
+    uploadToFirebase(blob)
+  });
+  // convertCanvasToImage(canvas);
   player.srcObject.getVideoTracks().forEach(track => track.stop());
 });
 // Attach the video stream to the video element and autoplay.
@@ -140,11 +67,75 @@ navigator.mediaDevices.getUserMedia(constraints)
   .then((stream) => {
     player.srcObject = stream;
   });
+function uploadToFirebase(photo){
+    // this code handles watson facial recongition
+    // use photo to pass into api call
+    const file = photo;
+    console.log(photo)
+    // const name = (+new Date()) + '-' + file.name;
+    // var reader = new FileReader();
+    // reader.addEventListener('load', readFile);
+    // console.log(reader.readAsText(file));
 
+    const metadata = {
+        contentType: file.type
+    };
+    const task = ref.child("image").put(photo, metadata);
+    task
+    .then(snapshot => snapshot.ref.getDownloadURL())
+    .then((url) => {
+        console.log(url);
+        // document.querySelector('#someImageTagID').src = url;
+    })
+    .catch(console.error);
+}
 
+function processImage() {
+  // Replace <Subscription Key> with your valid subscription key.
+  var subscriptionKey = "9f64fbd89816421ca1fc4e7bce4311c1";
+  var uriBase =
+    "https://westus.api.cognitive.microsoft.com/face/v1.0/detect";
 
+  // Request parameters.
+  var params = {
+    "returnFaceId": "true",
+    "returnFaceLandmarks": "false",
+    "returnFaceAttributes":
+        "age,gender,headPose,smile,facialHair,glasses,emotion," +
+        "hair,makeup,occlusion,accessories,blur,exposure,noise"
+  };
 
-
+  var sourceImageUrl = "https://firebasestorage.googleapis.com/v0/b/melos-71bca.appspot.com/o/image?alt=media&token=2e5e69ad-907a-4ff3-b249-4177bb19864f"
+  //===============AJAX Calls===========================//
+  // Perform the REST API call.
+  $.ajax({
+    url: uriBase + "?" + $.param(params),
+    // Request headers.
+    beforeSend: function (xhrObj) {
+      xhrObj.setRequestHeader("Content-Type", "application/json");
+      xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+    },
+    type: "POST",
+    // Request body.
+    // processData: false,
+    data: '{"url": ' + '"' + sourceImageUrl + '"}',
+  }).done(function (data) {
+    console.log(data)
+    // Show formatted JSON on webpage.
+    // $("#responseTextArea").val(JSON.stringify(data, null, 2));
+   
+  }).fail(function (jqXHR, textStatus, errorThrown) {
+    console.log(jqXHR,textStatus,errorThrown);
+    // Display error message.
+    var errorString = (errorThrown === "") ?
+      "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+    errorString += (jqXHR.responseText === "") ?
+      "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
+        jQuery.parseJSON(jqXHR.responseText).message :
+        jQuery.parseJSON(jqXHR.responseText).error.message;
+     alert(errorString);
+  });
+};
 
 // Get current wx from OpenWeather API
 function getWeather() {

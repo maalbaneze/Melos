@@ -301,6 +301,7 @@ document.getElementById("submit").onclick=function() {
     $("#media-playlist2").show();
     $("#media-playlist1").hide();
 
+
   };
   if(selectedMusic=="rockVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
     $("#playlist").attr("src","https://open.spotify.com/embed/user/sonymusicfinland/playlist/5BygwTQ3OrbiwVsQhXFHMz").toggle(2000).toggle(1000);;
@@ -849,3 +850,4 @@ document.getElementById("submit").onclick=function() {
   //musicChoice + wxPref + mood + facialMood = userPlaylist;
 //};
 //genPlaylist();
+});

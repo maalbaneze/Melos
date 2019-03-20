@@ -205,6 +205,37 @@
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
+                      <form class="zipcode-form">
+                                <div id="country" class="input-group mb-3">
+                                    <input id="postal-code" type="text" class="form-control"
+                                        placeholder="Submit Zip or Postal Code" aria-label="Submit Zip or Postal Code"
+                                        aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button id="submit" class="btn btn-info navbar-toggler" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" type="submit">Submit</button>
+                                    </div>
+                                    <!--closed-->
+                                </div>
+                                <!--closed-->
+                            </form>
+                             <!--closed-->
+                      <div class="col-md-4">
+                        <div id="media-row1" class="col-md-4" style="display: none">
+                                <button class="btn1" type="button" id="capture1"><img src="images/Antu_folder-camera.png"
+                                        width="50px" height="50px"></button>
+                            </div><!-- COL end -->
+                             <div id="media-row2" class="col-md-4">
+                                    <button class="btn2" type="button" id="capture2"><img src="images/Antu_folder-camera.png"
+                                            width="50px" height="50px"></button>
+                                </div><!-- COL end -->
+                            </div>
+                            
+                            <div id="media-playlist1" class="col-md-3">
+                                <button class="btn3" type="button" id="play1">SHOW/HIDE PLAYLIST</button>
+                            </div>
+                            <div id="media-playlist2" class="col-md-3" style="display: none">
+                                    <button class="btn4" type="button" id="play2">SHOW/HIDE PLAYLIST</button>
+                                </div>
+                            </div>
                     </nav>
                    
         
@@ -273,18 +304,7 @@
                     <!--closed-->
                     <div class="col-md-12" style="max-width: 28rem;">
                         <!-- new button type -->
-                        <form class="zipcode-form">
-                            <div id="country" class="input-group mb-3">
-                                <input id="postal-code" type="text" class="form-control"
-                                    placeholder="Submit Zip or Postal Code" aria-label="Submit Zip or Postal Code"
-                                    aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button id="submit" class="btn btn-info" type="submit">Submit</button>
-                                </div>
-                                <!--closed-->
-                            </div>
-                            <!--closed-->
-                        </form>
+                        
                         <!-- <div class="card mb-4">
                             <div class="card-header text-center text-white bg-secondary"><b>Current Location</b></div>
                             <div class="card-body">
@@ -307,17 +327,7 @@
             <div class="col-md-6">
                 <!--closed-->
                 <div class="row">
-                        <!--closed-->
-                      <div class="col-md-4">
-                            <div id="media-row1" class="col-md-6" style="display: none">
-                                    <button class="btn1" type="button" id="capture1"><img src="images/Antu_folder-camera.png"
-                                            width="50px" height="50px"></button>
-                                </div><!-- COL end -->
-                                 <div id="media-row2" class="col-md-6">
-                                        <button class="btn2" type="button" id="capture2"><img src="images/Antu_folder-camera.png"
-                                                width="50px" height="50px"></button>
-                                    </div><!-- COL end -->
-                                </div>
+                   
                                 <div class="col-md-4">
 
                                     ABOUT CAMERA
@@ -326,13 +336,7 @@
                         <div class="col-md-4">
 
 
-                        <div id="media-playlist1" class="col-md-6">
-                                <button class="btn3" type="button" id="play1">SHOW/HIDE PLAYLIST</button>
-                            </div>
-                            <div id="media-playlist2" class="col-md-6" style="display: none">
-                                    <button class="btn4" type="button" id="play2">SHOW/HIDE PLAYLIST</button>
-                                </div>
-                            </div>
+                        
 
                              
                    
@@ -442,7 +446,6 @@
         <!-- Playlist goes here ONLY WHEN GENERATED -->
         
         <!-- User buttons to accept and play, or reject playlist and get a new one ONLY SHOWN AFTER PLAYLIST IS GENERATED 
-
     <div class=container id="start-session">
         <div class="row">
             <div class="col-md-12" style="max-width: 36rem;">
@@ -458,7 +461,6 @@
     </div>-->
 
         <!-- User Start, Pause, and End buttons ONLY SHOWN AFTER PLAYLIST IS GENERATED
-
     <div class=container id="during-play">
         <div class="row">
             <div class="col-md-12" style="max-width: 36rem;">
@@ -471,7 +473,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>-->
         <!-- Page Footer -->

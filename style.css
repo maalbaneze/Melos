@@ -158,10 +158,20 @@ h4 {
 }
 #play-list-container {
     padding-top: 20px;
-    display: flex;
-    justify-content: center;
     padding-left: 75px;
+float:right;
+    
 }
+#player{
+    opacity: 0.7;
+}
+#face-app{
+    display: inline;
+    float: left;
+    opacity: 0.8;
+}
+
+
 
 /* RADIO BUTTONS*/
 [class*="icheck-"] {

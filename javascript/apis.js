@@ -105,7 +105,7 @@ function processImage() {
         "hair,makeup,occlusion,accessories,blur,exposure,noise"
   };
 
-  var sourceImageUrl = "https://firebasestorage.googleapis.com/v0/b/melos-71bca.appspot.com/o/image?alt=media&token=2e5e69ad-907a-4ff3-b249-4177bb19864f"
+  var sourceImageUrl = "http://vms.fnal.gov/stillphotos/2018/0000/18-0090-10.jpg"
   //===============AJAX Calls===========================//
   // Perform the REST API call.
   $.ajax({

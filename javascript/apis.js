@@ -157,19 +157,19 @@ function getWeather() {
       // -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
       $('#header-name').css('text-shadow', 'black -5px 5px 1px');
     }
-    if (weatherType === "Cloud") {
+    else if (weatherType === "Clouds") {
       $('body').css('background-image', 'url(images/clouds.jpg)');
     }
-    if (weatherType === "Thunder") {
+    else if (weatherType === "Thunder") {
       $('body').css('background-image', 'url(images/thunder.jpg)');
     }
-    if (weatherType === "Rain") {
+    else if (weatherType === "Rain") {
       $('body').css('background-image', 'url(images/heavy-rain.jpg)');
     }
-    if (weatherType === "Drizzle") {
+    else if (weatherType === "Drizzle") {
       $('body').css('background-image', 'url(images/heavy-rain.jpg)');
     }
-    if (weatherType === "Snow") {
+    else if (weatherType === "Snow") {
       $('body').css('background-image', 'url(images/heavy-rain.jpg)');
     }
 

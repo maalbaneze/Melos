@@ -3,7 +3,7 @@ Project #1
 
 Project Title:  Melos
 
-Team Members: Kenus, Phi, Dennis, Michael
+Team Members: Kenus, Phi-Hai, Dennis, Michael
 
 Project Description: An app for finding the right music based on a user’s music preferences, mood, and the weather.  
 

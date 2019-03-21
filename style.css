@@ -6,6 +6,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size: 100%;
     position: relative;
+    overflow: auto;
 }
 
 /* changed the jumborton css -dennis*/
@@ -18,7 +19,7 @@ body {
     position: fixed;
 }
 
-#logo-name {
+.logoName {
     font-family: Verdana, Tahoma, sans-serif; 
     color: white;
     height: 150px;
@@ -29,7 +30,13 @@ body {
     display: flex;
     justify-content: center;
 }
-.wrapper1 {
+
+#logo-wrapper {
+    margin-bottom: 200px;
+}
+#country {
+
+    padding-top: 15px;
 }
 /* created css -dennis*/
 #header-name {
@@ -45,6 +52,20 @@ body {
     width: 250px;
     color: white;
     margin-top: 20px;
+  }
+  .card-background2 {
+    background-color: rgb(8, 8, 8, 0.2);;
+    width: 300px;
+    color: white;
+    margin-top: 20px;
+    
+  }
+  .card-background5 {
+    background-color: rgb(8, 8, 8, 0.4);;
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
   }
 
 .nav3 {
@@ -85,6 +106,17 @@ font-family: 'Roboto', sans-serif;
     border: 1px solid  rgb(193, 193, 215);
     background-color: transparent;
 }
+
+#melos-button {
+    background-color: transparent;
+    color:white;
+    border-style: none;
+
+}
+
+.btn:focus {
+    outline: none;
+  }
 /*hovers*/
 #submit:hover {
     background-color: rgb(193, 193, 215, 0.6);
@@ -109,10 +141,9 @@ font-family: 'Roboto', sans-serif;
     font-size: 24px;
 }
 .instructions {
-    font-size: 20px;
+    font-size: 15px;
     border-color: darkgray;
     margin: 10px;
-    padding: 10px;
 }
 #player {
     width: 320px;
@@ -147,6 +178,21 @@ font-family: 'Roboto', sans-serif;
     border-radius: 20px;
     
 }
+
+#play1 {
+    margin-left: 10px;
+    position:relative;
+    background-color: rgb(193, 193, 215, 0.8);
+    border-color: transparent;
+    border-radius: 20px;
+}
+#play2 {
+    margin-left: 10px;
+    position:relative;
+    background-color: rgb(193, 193, 215, 0.8);
+    border-color: transparent;
+    border-radius: 20px;
+}
 #canvas {
     float: right;
     padding: 10px;
@@ -157,10 +203,16 @@ h4 {
 }
 #play-list-container {
     padding-top: 20px;
-    padding-left: 75px;
-float:right;
-    
+    width: 70%;
+    margin-right: 100px;
 }
+
+#playlist
+{opacity: 0.7;
+    height: 450px;
+
+}
+
 #player{
     opacity: 0.7;
 }

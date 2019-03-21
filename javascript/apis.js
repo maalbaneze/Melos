@@ -196,6 +196,7 @@ $("#submit").on("click", function (event) {
   $("#postal-code").html("")
   getWeather();
   processImage();
+  $("#logo-wrapper").fadeOut(1000);
 });
 
 //Algorithm to correlate user info to generate playlist
@@ -249,20 +250,30 @@ $("#returnedPlaylist").actualCallback;
 
 
 $("#media-row1").click(function(){
-  $("#media-row").hide(1000);
+  $("#media-row").fadeOut(500);
   $("#media-row1").hide();
   $("#media-row2").show();
   $("#media-playlist2").hide();
   $("#media-playlist1").show();
+
+  $("#logo-wrapper").fadeIn(1000);
 });
 
+
+
 $("#media-row2").click(function(){
-  $("#media-row").show(1000);
+  $("#media-row").fadeIn(1000);
   $("#play-list-container").hide(1000);
   $("#media-playlist2").hide();
   $("#media-playlist1").show();
   $("#media-row1").show();
   $("#media-row2").hide();
+
+  // $("#nav-cont").fadeOut(500);
+
+
+
+  $("#logo-wrapper").fadeOut(500);
 
 });
 
@@ -274,6 +285,8 @@ $("#media-playlist1").click(function(){
   $("#media-row2").show();
   $("#media-playlist2").show();
   $("#media-playlist1").hide();
+
+  $("#logo-wrapper").fadeOut(500);
 });
 
 
@@ -283,7 +296,29 @@ $("#media-playlist2").click(function(){
   $("#media-row1").hide();
   $("#media-playlist2").hide();
   $("#media-playlist1").show();
+
+  $("#logo-wrapper").fadeIn(1000);
 });
+
+$("#melos-button").click(function(){
+  $("#play-list-container").hide(1000);
+  $("#media-row").hide(1000);
+  $("#media-row2").show();
+  $("#media-row1").hide();
+  $("#media-playlist2").hide();
+  $("#media-playlist1").show();
+  $("#logo-wrapper").fadeIn(1000);
+});
+// $("#togButton").click(function(){
+//   $("#play-list-container").hide(1000);
+//   $("#media-playlist1").show();
+//   $("#media-playlist2").hide();
+//   $("#media-row").fadeOut(500);
+//   $("#media-row2").show();
+//   $("#media-row1").hide();  
+//   $("#logo-wrapper").fadeOut(1000);
+// });
+
 
 
 

@@ -41,11 +41,10 @@ body {
 
 /*background-color: rgb(193, 193, 215, 0.3);*/
 .card-background {
-    background-color: transparent;
+    background-color: rgb(8, 8, 8, 0.2);;
     width: 250px;
     color: white;
     margin-top: 20px;
- 
   }
 
 .nav3 {

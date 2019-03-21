@@ -532,54 +532,41 @@ $(document).ready(function () {
       $("#playlist").attr("src", "");
     }
 
-<<<<<<< HEAD
-    //================bummed mood==========================//
-    else if (selectedMusic == "rockVal" && selectedWeather == "rainVal" && selectedMood == "bummedVal") {
-      $("#playlist").attr("src", "https://open.spotify.com/embed/user/bmo6xqjgu50yfujs7utbqsmsp/playlist/3jxJ5VOEudOS5iWfq27deI");
-    }
-=======
-document.getElementById("submit").onclick=function() {
->>>>>>> master
+    document.getElementById("submit").onclick = function () {
 
     else if (selectedMusic == "hipHopVal" && selectedWeather == "rainVal" && selectedMood == "bummedVal") {
-      $("#playlist").attr("src", "https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DWSqBruwoIXkA");
+        $("#playlist").attr("src", "https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DWSqBruwoIXkA");
+      }
+
+    };
+
+    if (selectedMusic == "rockVal" && selectedWeather == "clearVal" && selectedMood == "greatVal") {
+      $("#playlist").attr("src", "https://open.spotify.com/embed/user/sonymusicfinland/playlist/5BygwTQ3OrbiwVsQhXFHMz");
     }
 
-<<<<<<< HEAD
-    else if (selectedMusic == "jazzVal" && selectedWeather == "rainVal" && selectedMood == "bummedVal") {
-      $("#playlist").attr("src", "https://open.spotify.com/embed/user/1233564303/playlist/0NcQtKxtJUS1tzzliuAUzE");
+    else if (selectedMusic == "hipHopVal" && selectedWeather == "clearVal" && selectedMood == "greatVal") {
+      $("#playlist").attr("src", "https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DXdPec7aLTmlC");
     }
-=======
-  };
-  
-  if(selectedMusic=="rockVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
-    $("#playlist").attr("src","https://open.spotify.com/embed/user/sonymusicfinland/playlist/5BygwTQ3OrbiwVsQhXFHMz");
-  }
-  
-  else  if(selectedMusic=="hipHopVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
-    $("#playlist").attr("src","https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DXdPec7aLTmlC");
-  }
-  
-  else  if(selectedMusic=="jazzVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
-    $("#playlist").attr("src","https://open.spotify.com/embed/user/1135059712/playlist/57CfuwaT1ERCKrJIcTPL4M");
-  }
-  
-  else  if(selectedMusic=="electronicaVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
-    $("#playlist").attr("src","https://open.spotify.com/embed/user/cmihran/playlist/4FW02V8r0GQxCAckzGRKl6");
-  }
-  else  if(selectedMusic=="rbval" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
-    $("#playlist").attr("src","https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX9XIFQuFvzM4");
-  }
-  else  if(selectedMusic=="countryVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
-    $("#playlist").attr("src","https://open.spotify.com/embed/user/1278255944/playlist/78pbcVh3P7V3lsjsxAabUp");
-  }
-  else  if(selectedMusic=="alternativeVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
-    $("#playlist").attr("src","https://open.spotify.com/embed/user/12122337581/playlist/4ywC29onirHuIiCKW0tDrW");
-  }
-  else  if(selectedMusic=="randomVal" && selectedWeather=="clearVal" && selectedMood=="greatVal"){ 
-    $("#playlist").attr("src","");
-  }
->>>>>>> master
+
+    else if (selectedMusic == "jazzVal" && selectedWeather == "clearVal" && selectedMood == "greatVal") {
+      $("#playlist").attr("src", "https://open.spotify.com/embed/user/1135059712/playlist/57CfuwaT1ERCKrJIcTPL4M");
+    }
+
+    else if (selectedMusic == "electronicaVal" && selectedWeather == "clearVal" && selectedMood == "greatVal") {
+      $("#playlist").attr("src", "https://open.spotify.com/embed/user/cmihran/playlist/4FW02V8r0GQxCAckzGRKl6");
+    }
+    else if (selectedMusic == "rbval" && selectedWeather == "clearVal" && selectedMood == "greatVal") {
+      $("#playlist").attr("src", "https://open.spotify.com/embed/user/spotify/playlist/37i9dQZF1DX9XIFQuFvzM4");
+    }
+    else if (selectedMusic == "countryVal" && selectedWeather == "clearVal" && selectedMood == "greatVal") {
+      $("#playlist").attr("src", "https://open.spotify.com/embed/user/1278255944/playlist/78pbcVh3P7V3lsjsxAabUp");
+    }
+    else if (selectedMusic == "alternativeVal" && selectedWeather == "clearVal" && selectedMood == "greatVal") {
+      $("#playlist").attr("src", "https://open.spotify.com/embed/user/12122337581/playlist/4ywC29onirHuIiCKW0tDrW");
+    }
+    else if (selectedMusic == "randomVal" && selectedWeather == "clearVal" && selectedMood == "greatVal") {
+      $("#playlist").attr("src", "");
+    }
 
     else if (selectedMusic == "electronicaVal" && selectedWeather == "rainVal" && selectedMood == "bummedVal") {
       $("#playlist").attr("src", "https://open.spotify.com/embed/user/1246052288/playlist/2Vz3YWfo3tOKqKSHIuW322");

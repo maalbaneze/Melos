@@ -27,18 +27,18 @@ $(document).ready(function () {
 
   
 
-  // Get user input preferences on radio button select and store as variables
+  // //Get user input preferences on radio button select and store as variables
 
-    $('input:radio').change(function () {
-      console.log($(this).attr("name"))
-      var selection = $(this).attr("id")
-      console.log(selection)
+  //   $('input:radio').change(function () {
+  //     console.log($(this).attr("name"))
+  //     var selection = $(this).attr("id")
+  //     console.log(selection)
 
-      var musicChoice = $(selection).val("id")
-      var weatherPref = $(selection).val("id")
-      var mood = $(selection).val("id")
-      database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
-    });
+  //     var musicChoice = $(selection).val("id")
+  //     var weatherPref = $(selection).val("id")
+  //     var mood = $(selection).val("id")
+  //     database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
+  //   });
 
 // Obtain a user pic for sending to MS Azure facial recog API
 const player = document.getElementById('player');

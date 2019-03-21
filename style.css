@@ -5,14 +5,39 @@ body {
     background-repeat: repeat;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size: 100%;
+    position: relative;
+    overflow: auto;
 }
 
 /* changed the jumborton css -dennis*/
 .jumbotron { 
     font-family: Verdana, Tahoma, sans-serif; 
     color: white;
-    height: 150px;
+    height: 100px;
     padding: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.logoName {
+    font-family: Verdana, Tahoma, sans-serif; 
+    color: white;
+    height: 150px;
+    padding-top: 200px;
+}
+
+.logo-col {
+    display: flex;
+    justify-content: center;
+}
+
+#logo-wrapper {
+    margin-bottom: 200px;
+    margin-left: 50px;
+}
+#country {
+
+    padding-top: 15px;
 }
 /* created css -dennis*/
 #header-name {
@@ -24,15 +49,40 @@ body {
 
 /*background-color: rgb(193, 193, 215, 0.3);*/
 .card-background {
-    background-color: transparent;
-    width: 175px;
+    background-color: rgb(8, 8, 8, 0.2);;
+    width: 250px;
     color: white;
+    margin-top: 20px;
+  }
+  .card-background2 {
+    background-color: rgb(8, 8, 8, 0.2);;
+    width: 300px;
+    color: white;
+    margin-top: 20px;
     
-    }
+  }
+  .card-background5 {
+    background-color: rgb(8, 8, 8, 0.4);;
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+.nav3 {
+
+    background-color: rgba(8, 8, 8, 0.6);
+}
+
+.navContent {
+    background-color: rgb(8, 8, 8, 0.4);
+
+}
 
     .card-wrap {
     
         padding: 10px;
+        width: 100%;
     }
 
     /*
@@ -57,6 +107,17 @@ font-family: 'Roboto', sans-serif;
     border: 1px solid  rgb(193, 193, 215);
     background-color: transparent;
 }
+
+#melos-button {
+    background-color: transparent;
+    color:white;
+    border-style: none;
+
+}
+
+.btn:focus {
+    outline: none;
+  }
 /*hovers*/
 #submit:hover {
     background-color: rgb(193, 193, 215, 0.6);
@@ -81,10 +142,9 @@ font-family: 'Roboto', sans-serif;
     font-size: 24px;
 }
 .instructions {
-    font-size: 20px;
+    font-size: 15px;
     border-color: darkgray;
     margin: 10px;
-    padding: 10px;
 }
 #player {
     width: 320px;
@@ -97,10 +157,42 @@ font-family: 'Roboto', sans-serif;
 #capture {
     margin-left: 10px;
     position:relative;
-    background-color: rgb(193, 193, 215, 0.6);
+    background-color: rgb(193, 193, 215, 0.8);
     border-color: transparent;
-    border-radius: 25px;
+    border-radius: 20px;
     
+}
+
+#capture1 {
+    margin-left: 10px;
+    position:relative;
+    background-color: rgb(193, 193, 215, 0.8);
+    border-color: transparent;
+    border-radius: 20px;
+    
+}
+#capture2 {
+    margin-left: 10px;
+    position:relative;
+    background-color: rgb(193, 193, 215, 0.8);
+    border-color: transparent;
+    border-radius: 20px;
+    
+}
+
+#play1 {
+    margin-left: 10px;
+    position:relative;
+    background-color: rgb(193, 193, 215, 0.8);
+    border-color: transparent;
+    border-radius: 20px;
+}
+#play2 {
+    margin-left: 10px;
+    position:relative;
+    background-color: rgb(193, 193, 215, 0.8);
+    border-color: transparent;
+    border-radius: 20px;
 }
 #canvas {
     float: right;
@@ -112,10 +204,26 @@ h4 {
 }
 #play-list-container {
     padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    padding-left: 75px;
+    width: 70%;
+    margin-right: 100px;
 }
+
+#playlist
+{opacity: 0.7;
+    height: 450px;
+
+}
+
+#player{
+    opacity: 0.7;
+}
+#face-app{
+    display: inline;
+    float: left;
+    opacity: 0.8;
+}
+
+
 
 /* RADIO BUTTONS*/
 [class*="icheck-"] {

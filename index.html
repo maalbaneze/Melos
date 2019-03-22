@@ -18,6 +18,10 @@
     <!-- CSS files-->
     <link rel="stylesheet" type="text/css" media="screen" href="reset.css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
@@ -29,7 +33,7 @@
     <!-- NAV BAR STARTS -->
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
-            <div id="nav-cont" class="navContent">
+            <div id="nav-cont" class="navContent sticky">
                 <h6 class="text-white h6">
 
 
@@ -233,10 +237,13 @@
 
             <div class="col3">
 
-                <div>
-                    <h6><button class="btn" type="button" id="melos-button">MELOS</button></h6>
+                <div id="melos-button1">
+                    <h6 id="instructions"><button id="melos-button" class="btn" type="button">Instructions</button></h6>
                 </div>
-
+                <div id="melos-button2" class="melos2" style="display:none">
+                    <h6 id="instructions1"><button id="melos-button" class="btn" type="button">Instructions</button>
+                    </h6>
+                </div>
             </div>
 
             <div class="col4">
@@ -254,13 +261,53 @@
         </nav>
     </div>
 
-    <div id="logo-wrapper" class="container row logoName">
-        <h1 id="header-name"><strong>Melos...</strong></h1>
-        <p class="lead">Your music source based on your tastes, your mood, and your weather!</p>
-        <br>
+    <div id="instructions-wrapper" class="container" style="display:none">
+        <div class="card-background2 card mb-4">
 
+            <div class="card-header">
+                <h5>Instructions</h5>
+            </div>
+            <div class="card-wrap">
+                <br>
+                <p class="instructions">
+                    <ul class="instructions">
+                        <li>*Allow access to your camera so you can take your picture (not required)</li>
+                        <li>*Click the drop-down menu to the upper left and select your music genre and weather
+                            preferences,
+                            and your current mood</li>
+                        <li>* Click on the camera icon and take your photo (if you wish)</li>
+                        <li>* Enter your postal or zip code to obtain your current weather, and then…
+                            Your playlist is generated!</li>
+                        <li>* To hide or show the current playlist, just click on the music note icon</li>
+                        <li>* If you want to update your photo, reload the page and enter your info again</li>
+                    </ul>
+                </p>
+            </div>
+
+        </div>
     </div>
 
+    <div id="logo-wrapper">
+        <div id="logo-wrapper1" class="container">
+            <div>
+                <p class="title-head">MELOS</p>
+            </div>
+            <div>
+                <p class="lead">Your music source based on your tastes, your mood, and your weather!</p>
+            </div>
+        </div>
+        <div class="blockquote">
+            <hr>
+            <blockquote class="text-center card-background5">
+                <p class="mb-0">And when the night is cloudy, there is still a light, that shines on me, shine until
+                    tomorrow,
+                    let it be.<br>
+                    I wake up to the sound of music, mother Mary comes to me, speaking words of wisdom, let it be.</p>
+                <footer class="blockquote-footer">Paul McCartney, <cite title="Source Title">Let It Be</cite></footer>
+            </blockquote>
+
+        </div>
+    </div>
     <!-- NAV BAR ENDS -->
 
     <!-- LOGO NAME -->
@@ -334,16 +381,6 @@
     </div>
 
 
-    <div>
-        <hr>
-        <blockquote class="blockquote text-center card-background5">
-            <p class="mb-0">And when the night is cloudy, there is still a light, that shines on me, shine until
-                tomorrow,
-                let it be.<br>
-                I wake up to the sound of music, mother Mary comes to me, speaking words of wisdom, let it be.</p>
-            <footer class="blockquote-footer">Paul McCartney, <cite title="Source Title">Let It Be</cite></footer>
-        </blockquote>
-    </div>
 
 
 

@@ -7,6 +7,7 @@ body {
     background-size: 100%;
     position: relative;
     overflow: auto;
+    position: relative;
 }
 
 /* changed the jumborton css -dennis*/
@@ -414,7 +415,7 @@ width: 100%;
         height: auto;
 
     }
-    h1{
+    .title-head{
         width: 100%;
         font-size: 80px;
         box-sizing: border-box;
@@ -473,7 +474,7 @@ width: 100%;
         height: auto;
 
     }
-    h1{
+    .title-head{
         width: 100%;
         font-size: 80px;
         box-sizing: border-box;
@@ -505,9 +506,7 @@ width: 100%;
     .card{
         width: 100%;
     }
-    .blockquote{
-        display: none;
-    }
+   
     }
   
   /* #### Mobile Phones Portrait or Landscape #### */
@@ -531,7 +530,7 @@ width: 100%;
         padding: 0;
         margin:0;
     }
-    h1{
+    .title-head{
         width: 100%;
         font-size: 80px;
         box-sizing: border-box;
@@ -588,7 +587,7 @@ width: 100%;
         height: auto;
 
     }
-    h1{
+    .title-head{
         width: 100%;
         font-size: 80px;
         box-sizing: border-box;
@@ -647,7 +646,7 @@ width: 100%;
         height: auto;
 
     }
-    h1{
+    .title-head{
         width: 100%;
         font-size: 80px;
         box-sizing: border-box;
@@ -679,9 +678,7 @@ width: 100%;
     .card{
         width: 100%;
     }
-    .blockquote{
-        display: none;
-    }
+  
     }
   
   
@@ -706,15 +703,15 @@ width: 100%;
    
 
     }
-    h1{
+    .title-head{
         width: 100%;
-        font-size: 200px;
+        font-size: 80px;
         box-sizing: border-box;
         margin: 0;
     }
     strong{
         width: 100%;
-        font-size: 50px;
+        font-size: 80px;
     }
     .lead{
         width: 100%;
@@ -764,15 +761,15 @@ overflow: auto;
         height: auto;
 
     }
-    h1{
+    .title-head{
         width: 100%;
-        font-size: 80px;
+        font-size: 100px;
         box-sizing: border-box;
         margin: 0;
     }
     strong{
         width: 100%;
-        font-size: 80px;
+        font-size: 100px;
     }
     .lead{
         width: 100%;
@@ -822,7 +819,7 @@ width: 100%;
         height: auto;
 
     }
-    h1{
+    .title-head{
         width: 100%;
         font-size: 200px;
         box-sizing: border-box;
@@ -854,9 +851,8 @@ width: 100%;
     .card{
         width: 100%;
     }
-    .blockquote{
-        display: none;
-    }
+    
+    
     }
   /* #### iPhone 4 Portrait or Landscape #### */
   @media (device-height: 480px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){   body {
@@ -878,15 +874,15 @@ width: 100%;
     height: auto;
 
 }
-h1{
+.title-head{
     width: 100%;
-    font-size: 60px;
+    font-size: 70px;
     box-sizing: border-box;
     margin: 0;
 }
 strong{
     width: 100%;
-    font-size: 60px;
+    font-size: 70px;
 }
 .lead{
     width: 100%;
@@ -914,7 +910,7 @@ strong{
     display: none;
 }
 }
-/* #### iPhone 4 Portrait or Landscape #### */
+/* #### iPad mini Portrait or Landscape #### */
 @media (device-height: 1024px) and (device-width: 768px) and (-webkit-min-device-pixel-ratio: 2){   body {
     box-sizing: border-box;
     height: auto;
@@ -934,7 +930,7 @@ width: 100%;
     height: auto;
 
 }
-h1{
+.title-head{
     width: 100%;
     font-size: 140px;
     box-sizing: border-box;
@@ -966,7 +962,8 @@ strong{
 .card{
     width: 100%;
 }
-.blockquote{
-    display: none;
-}
+ .blockquote{
+       display: none;
+   }
+
 }

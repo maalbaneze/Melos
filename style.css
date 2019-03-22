@@ -126,7 +126,7 @@ justify-content: center;
     background-color: rgb(8, 8, 8, 0.4);
     width: 250px;
     color: white;
-    text-shadow:2px 2px #666;
+    text-shadow:2px 2px rgb(24, 22, 22);
     margin-top: 20px;
     font-family: 'Lato', sans-serif;
     padding: 30px;
@@ -139,7 +139,7 @@ justify-content: center;
     background-color: rgb(8, 8, 8, 0.6);
     width: 300px;
     color: white;
-    text-shadow:2px 2px #666;
+    text-shadow:2px 2px rgb(24, 22, 22);
     margin-top: 20px;
     
   }
@@ -147,7 +147,7 @@ justify-content: center;
     background-color: rgb(8, 8, 8, 0.6);
     width: 100%;
     color: white;
-    text-shadow:2px 2px #666;
+    text-shadow:2px 2px  rgb(24, 22, 22);
     margin-top: 20px;
     padding: 10px;
   }

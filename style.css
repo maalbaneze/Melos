@@ -120,7 +120,7 @@ justify-content: center;
 
 /*background-color: rgb(193, 193, 215, 0.3);*/
 .card1-background {
-    background-color: rgb(8, 8, 8, 0.2);;
+    background-color: rgb(8, 8, 8, 0.4);
     width: 250px;
     color: white;
     margin-top: 20px;
@@ -132,14 +132,14 @@ justify-content: center;
       border-radius: 15px;
   }
   .card1-background2 {
-    background-color: rgb(8, 8, 8, 0.2);;
+    background-color: rgb(8, 8, 8, 0.6);
     width: 300px;
     color: white;
     margin-top: 20px;
     
   }
   .card1-background5 {
-    background-color: rgb(8, 8, 8, 0.4);;
+    background-color: rgb(8, 8, 8, 0.6);
     width: 100%;
     color: white;
     margin-top: 20px;
@@ -152,11 +152,11 @@ justify-content: center;
 }
 
 .navContent {
-    background-color: rgb(8, 8, 8, 0.4);
+    background-color: rgb(8, 8, 8, 0.2);
 
 }
 
-    .card-wrap {
+    .card1-wrap {
     
         padding: 10px;
         width: 100%;

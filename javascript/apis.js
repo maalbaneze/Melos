@@ -264,7 +264,7 @@ $("#media-row1").click(function(){
 
 
 $("#media-row2").click(function(){
-  $("#media-row").fadeIn(1000);
+  $("#media-row").fadeIn(2000);
   $("#play-list-container").hide(1000);
   $("#media-playlist2").hide();
   $("#media-playlist1").show();
@@ -280,14 +280,14 @@ $("#media-row2").click(function(){
 
 
 
-  $("#logo-wrapper").fadeOut(500);
+  $("#logo-wrapper").fadeOut();
 
 });
 
 
 $("#media-playlist1").click(function(){
   $("#play-list-container").show(1000);
-  $("#media-row").hide(1000);
+  $("#media-row").fadeOut(2000);
   $("#media-row1").hide();
   $("#media-row2").show();
   $("#media-playlist2").show();

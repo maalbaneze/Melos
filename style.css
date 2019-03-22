@@ -63,6 +63,8 @@ display: flex;
 justify-content: center;
 }
 
+
+
 /* 
 #logo-wrapper {
     margin-left: 50px;
@@ -110,21 +112,26 @@ justify-content: center;
 
 
 /*background-color: rgb(193, 193, 215, 0.3);*/
-.card-background {
+.card1-background {
     background-color: rgb(8, 8, 8, 0.2);;
     width: 250px;
     color: white;
     margin-top: 20px;
     font-family: 'Lato', sans-serif;
+    padding: 30px;
+    
   }
-  .card-background2 {
+  .cont1 {
+      border-radius: 15px;
+  }
+  .card1-background2 {
     background-color: rgb(8, 8, 8, 0.2);;
     width: 300px;
     color: white;
     margin-top: 20px;
     
   }
-  .card-background5 {
+  .card1-background5 {
     background-color: rgb(8, 8, 8, 0.4);;
     width: 100%;
     color: white;
@@ -179,6 +186,10 @@ font-family: 'Roboto', sans-serif;
     color:white;
     border-style: none;
 
+}
+
+.camicon {
+    background-color: transparent;
 }
 
 .btn:focus {
@@ -444,7 +455,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -503,7 +514,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
    
@@ -559,7 +570,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -616,7 +627,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -675,7 +686,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
   
@@ -732,7 +743,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -790,7 +801,7 @@ overflow: auto;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -848,7 +859,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     
@@ -903,7 +914,7 @@ strong{
 #player{
     width: 100%;
 }
-.card{
+.cont1{
     width: 100%;
 }
 .blockquote{
@@ -959,7 +970,7 @@ strong{
 #player{
     width: 100%;
 }
-.card{
+.cont1{
     width: 100%;
 }
  .blockquote{
@@ -967,3 +978,9 @@ strong{
    }
 
 }
+
+
+/* 
+replaced card to card1
+
+*/

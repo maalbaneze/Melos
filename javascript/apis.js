@@ -160,16 +160,16 @@ function getWeather() {
     if (weatherType === "Clouds") {
       $('body').css('background-image', 'url(images/clouds.jpg)');
     }
-    if (weatherType === "Thunder") {
+    else if (weatherType === "Thunder") {
       $('body').css('background-image', 'url(images/thunder.jpg)');
     }
-    if (weatherType === "Rain") {
+    else if (weatherType === "Rain") {
       $('body').css('background-image', 'url(images/heavy-rain.jpg)');
     }
-    if (weatherType === "Drizzle") {
+    else if (weatherType === "Drizzle") {
       $('body').css('background-image', 'url(images/heavy-rain.jpg)');
     }
-    if (weatherType === "Snow") {
+    else if (weatherType === "Snow") {
       $('body').css('background-image', 'url(images/heavy-rain.jpg)');
     }
 
@@ -936,3 +936,4 @@ document.getElementById("submit").onclick=function() {
 //};
 //genPlaylist();
 });
+

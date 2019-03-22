@@ -7,6 +7,7 @@ body {
     background-size: 100%;
     position: relative;
     overflow: auto;
+    position: relative;
 }
 
 /* changed the jumborton css -dennis*/
@@ -388,4 +389,581 @@ h4 {
 .icheck-wetasphalt > input:first-child:checked + input[type="hidden"] + label::before {
     background-color: #34495e;
     border-color: #34495e;
+}
+
+
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+   
+        
+
+    body {
+        box-sizing: border-box;
+        height: auto;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+     
+    }
+    .navbar{
+width: 100%;
+
+    }
+    #logo-wrapper{
+        width: 100%;
+        height: auto;
+
+    }
+    .title-head{
+        width: 100%;
+        font-size: 80px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    strong{
+        width: 100%;
+        font-size: 80px;
+    }
+    .lead{
+        width: 100%;
+        font-size: 20px;
+    }
+    .row{
+        width: 100%;
+        margin:0;
+    }
+    #playlist{
+        width: 100%;
+    }
+    #play-list-container{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #player{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+    .blockquote{
+        display: none;
+    }
+  }  
+
+  
+  /* #### Mobile Phones Landscape #### */
+  @media screen and (max-device-width: 640px) and (orientation: landscape){
+    body {
+        box-sizing: border-box;
+        height: auto;
+
+        background-repeat: no-repeat;
+
+        background-size: cover;
+        background-attachment: fixed;
+    
+    }
+    .navbar{
+width: 100%;
+
+    }
+    #logo-wrapper{
+        width: 100%;
+        height: auto;
+
+    }
+    .title-head{
+        width: 100%;
+        font-size: 80px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    strong{
+        width: 100%;
+        font-size: 10px;
+    }
+    .lead{
+        width: 100%;
+        font-size: 2px;
+    }
+    .row{
+        width: 100%;
+        margin:0;
+    }
+    #playlist{
+        width: 100%;
+    }
+    #play-list-container{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #player{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+   
+    }
+  
+  /* #### Mobile Phones Portrait or Landscape #### */
+  @media screen and (max-device-width: 640px){
+    body {
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        height: 700px;
+
+        background-size: cover;
+        background-attachment: fixed;
+ 
+    }
+    .navbar{
+width: 100%;
+
+    }
+    #logo-wrapper{
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin:0;
+    }
+    .title-head{
+        width: 100%;
+        font-size: 80px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    strong{
+        width: 100%;
+        font-size: 80px;
+    }
+    .lead{
+        width: 100%;
+        font-size: 20px;
+    }
+    .row{
+        width: 100%;
+        margin:0;
+    }
+    #playlist{
+        width: 100%;
+    }
+    #play-list-container{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #player{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+    .blockquote{
+        display: none;
+    }
+    }
+  
+  /* #### iPhone 4+ Portrait or Landscape #### */
+  @media screen and (min-device-width: 850px){
+    body {
+        box-sizing: border-box;
+        height: 500px;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+     
+    }
+    .navbar{
+width: 100%;
+
+    }
+    #logo-wrapper{
+        width: 100%;
+        height: auto;
+
+    }
+    .title-head{
+        width: 100%;
+        font-size: 80px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    strong{
+        width: 100%;
+        font-size: 80px;
+    }
+    .lead{
+        width: 100%;
+        font-size: 20px;
+    }
+    .row{
+        width: 100%;
+        margin:0;
+    }
+    #playlist{
+        width: 100%;
+    }
+    #play-list-container{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #player{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+    .blockquote{
+        display: none;
+    }
+  }  
+
+  
+  /* #### Mobile Phones Landscape #### */
+  @media screen and (max-device-width: 640px) and (orientation: landscape){
+    body {
+        box-sizing: border-box;
+        height: 500px;
+
+        background-repeat: no-repeat;
+
+        background-size: cover;
+        background-attachment: fixed;
+    
+    }
+    .navbar{
+width: 100%;
+
+    }
+    #logo-wrapper{
+        width: 100%;
+        height: auto;
+
+    }
+    .title-head{
+        width: 100%;
+        font-size: 80px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    strong{
+        width: 100%;
+        font-size: 10px;
+    }
+    .lead{
+        width: 100%;
+        font-size: 2px;
+    }
+    .row{
+        width: 100%;
+        margin:0;
+    }
+    #playlist{
+        width: 100%;
+    }
+    #play-list-container{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #player{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+  
+    }
+  
+  
+  /* #### iPhone 5SE Portrait or Landscape #### */
+  @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){
+    body {
+        box-sizing: border-box;
+        height: 550px;
+
+        background-repeat: no-repeat;
+
+        background-size: cover;
+        background-attachment: fixed;
+        
+    }
+    .navbar{
+width: 100%;
+
+    }
+    #logo-wrapper{
+        width: 100%;
+   
+
+    }
+    .title-head{
+        width: 100%;
+        font-size: 80px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    strong{
+        width: 100%;
+        font-size: 80px;
+    }
+    .lead{
+        width: 100%;
+        font-size: 8px;
+    }
+    .row{
+        width: 100%;
+        margin:0;
+    }
+    #playlist{
+        width: 100%;
+    }
+    #play-list-container{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #player{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+    .blockquote{
+        display: none;
+    }
+    }
+  
+  /* #### iPhone 6 and 6 plus Portrait or Landscape #### */
+  @media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
+    body {
+        box-sizing: border-box;
+        height: 660px;
+
+        background-repeat: no-repeat;
+
+        background-size: cover;
+    
+    }
+    .navbar{
+width: 100%;
+overflow: auto;
+
+    }
+    #logo-wrapper{
+        width: 100%;
+        height: auto;
+
+    }
+    .title-head{
+        width: 100%;
+        font-size: 100px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    strong{
+        width: 100%;
+        font-size: 100px;
+    }
+    .lead{
+        width: 100%;
+        font-size: 10px;
+    }
+    .row{
+        width: 100%;
+        margin:0;
+    }
+    #playlist{
+        width: 100%;
+    }
+    #play-list-container{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #player{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+    .blockquote{
+        display: none;
+    }
+    }
+  
+  /* #### Tablets Portrait or Landscape #### */
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    body {
+        box-sizing: border-box;
+        height: auto;
+
+        background-repeat: no-repeat;
+
+        background-size: cover;
+        height: 1300px;
+    
+    }
+    .navbar{
+width: 100%;
+
+    }
+    #logo-wrapper{
+        width: 100%;
+        height: auto;
+
+    }
+    .title-head{
+        width: 100%;
+        font-size: 200px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    strong{
+        width: 100%;
+        font-size: 120px;
+    }
+    .lead{
+        width: 100%;
+        font-size: 15px;
+    }
+    .row{
+        width: 100%;
+        margin:0;
+    }
+    #playlist{
+        width: 100%;
+    }
+    #play-list-container{
+        width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    #player{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+    
+    
+    }
+  /* #### iPhone 4 Portrait or Landscape #### */
+  @media (device-height: 480px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){   body {
+    box-sizing: border-box;
+    height: auto;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    height: 380px;
+
+}
+.navbar{
+width: 100%;
+
+}
+#logo-wrapper{
+    width: 100%;
+    height: auto;
+
+}
+.title-head{
+    width: 100%;
+    font-size: 70px;
+    box-sizing: border-box;
+    margin: 0;
+}
+strong{
+    width: 100%;
+    font-size: 70px;
+}
+.lead{
+    width: 100%;
+    font-size: 9px;
+}
+.row{
+    width: 100%;
+    margin:0;
+}
+#playlist{
+    width: 100%;
+}
+#play-list-container{
+    width: 100%;
+    padding: 0;
+    margin: auto;
+}
+#player{
+    width: 100%;
+}
+.card{
+    width: 100%;
+}
+.blockquote{
+    display: none;
+}
+}
+/* #### iPad mini Portrait or Landscape #### */
+@media (device-height: 1024px) and (device-width: 768px) and (-webkit-min-device-pixel-ratio: 2){   body {
+    box-sizing: border-box;
+    height: auto;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    height: 1024px;
+
+}
+.navbar{
+width: 100%;
+
+}
+#logo-wrapper{
+    width: 100%;
+    height: auto;
+
+}
+.title-head{
+    width: 100%;
+    font-size: 140px;
+    box-sizing: border-box;
+    margin: 0;
+}
+strong{
+    width: 100%;
+    font-size: 140px;
+}
+.lead{
+    width: 100%;
+    font-size: 12px;
+}
+.row{
+    width: 100%;
+    margin:0;
+}
+#playlist{
+    width: 100%;
+}
+#play-list-container{
+    width: 100%;
+    padding: 0;
+    margin: auto;
+}
+#player{
+    width: 100%;
+}
+.card{
+    width: 100%;
+}
+ .blockquote{
+       display: none;
+   }
+
 }

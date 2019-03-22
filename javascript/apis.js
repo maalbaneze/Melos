@@ -27,18 +27,18 @@ $(document).ready(function () {
 
   
 
-  // Get user input preferences on radio button select and store as variables
+  // //Get user input preferences on radio button select and store as variables
 
-    $('input:radio').change(function () {
-      console.log($(this).attr("name"))
-      var selection = $(this).attr("id")
-      console.log(selection)
+  //   $('input:radio').change(function () {
+  //     console.log($(this).attr("name"))
+  //     var selection = $(this).attr("id")
+  //     console.log(selection)
 
-      var musicChoice = $(selection).val("id")
-      var weatherPref = $(selection).val("id")
-      var mood = $(selection).val("id")
-      database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
-    });
+  //     var musicChoice = $(selection).val("id")
+  //     var weatherPref = $(selection).val("id")
+  //     var mood = $(selection).val("id")
+  //     database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
+  //   });
 
 // Obtain a user pic for sending to MS Azure facial recog API
 const player = document.getElementById('player');
@@ -105,7 +105,7 @@ function processImage() {
         "hair,makeup,occlusion,accessories,blur,exposure,noise"
   };
 
-  var sourceImageUrl = "https://firebasestorage.googleapis.com/v0/b/melos-71bca.appspot.com/o/image?alt=media&token=2e5e69ad-907a-4ff3-b249-4177bb19864f"
+  var sourceImageUrl = "http://vms.fnal.gov/stillphotos/2018/0000/18-0090-10.jpg"
   //===============AJAX Calls===========================//
   // Perform the REST API call.
   $.ajax({
@@ -157,7 +157,7 @@ function getWeather() {
       // -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000");
       $('#header-name').css('text-shadow', 'black -5px 5px 1px');
     }
-    else if (weatherType === "Clouds") {
+    if (weatherType === "Clouds") {
       $('body').css('background-image', 'url(images/clouds.jpg)');
     }
     else if (weatherType === "Thunder") {
@@ -255,8 +255,10 @@ $("#media-row1").click(function(){
   $("#media-row2").show();
   $("#media-playlist2").hide();
   $("#media-playlist1").show();
-
   $("#logo-wrapper").fadeIn(1000);
+
+  $("#melos-button1").show(); //MELOS1 as default will show the instructions
+  $("#melos-button2").hide(); //MELOS2 as default will hide the instructions
 });
 
 
@@ -268,6 +270,11 @@ $("#media-row2").click(function(){
   $("#media-playlist1").show();
   $("#media-row1").show();
   $("#media-row2").hide();
+
+  $("#instructions-wrapper").fadeOut(1000);
+
+  $("#melos-button1").show(); //MELOS1 as default will show the instructions
+  $("#melos-button2").hide(); //MELOS2 as default will hide the instructions
 
   // $("#nav-cont").fadeOut(500);
 
@@ -287,6 +294,11 @@ $("#media-playlist1").click(function(){
   $("#media-playlist1").hide();
 
   $("#logo-wrapper").fadeOut(500);
+
+  $("#instructions-wrapper").fadeOut(1000);
+
+  $("#melos-button1").show(); //MELOS1 as default will show the instructions
+  $("#melos-button2").hide(); //MELOS2 as default will hide the instructions
 });
 
 
@@ -298,17 +310,55 @@ $("#media-playlist2").click(function(){
   $("#media-playlist1").show();
 
   $("#logo-wrapper").fadeIn(1000);
+
+  $("#melos-button1").show(); //MELOS1 as default will show the instructions
+  $("#melos-button2").hide(); //MELOS2 as default will hide the instructions
 });
 
-$("#melos-button").click(function(){
-  $("#play-list-container").hide(1000);
-  $("#media-row").hide(1000);
+
+
+$("#melos-button1").click(function(){
+  $("#media-row").hide();
+  $("#play-list-container").hide();
+  $("#instructions-wrapper").fadeIn(1000);
+  $("#melos-button1").hide(); //MELOS1 as default shows the instructions
+  $("#melos-button2").show(); //MELOS2 as default shows the instructions
   $("#media-row2").show();
-  $("#media-row1").hide();
+  $("#media-row1").hide();  
   $("#media-playlist2").hide();
   $("#media-playlist1").show();
-  $("#logo-wrapper").fadeIn(1000);
+  $("#logo-wrapper").fadeOut(1000);
+  
 });
+
+$("#melos-button2").click(function(){
+  $("#media-row").hide();
+  $("#play-list-container").hide();
+  $("#instructions-wrapper").hide();
+  $("#melos-button2").hide(); //MELOS2 as default shows the instructions
+  $("#melos-button1").show(); //MELOS1 as default shows the instructions
+  $("#media-playlist2").hide();
+  $("#media-playlist1").show();
+  $("#media-row2").show();
+  $("#media-row1").hide(); 
+  
+
+  
+});
+
+
+
+// $("#melos-button").click(function(){
+//   $("#play-list-container").hide(1000);
+//   $("#media-row").hide(1000);
+//   $("#media-row2").show();
+//   $("#media-row1").hide();
+//   $("#media-playlist2").hide();
+//   $("#media-playlist1").show();
+//   $("#instructions-wrapper").fadeIn(1000);
+// });
+
+
 // $("#togButton").click(function(){
 //   $("#play-list-container").hide(1000);
 //   $("#media-playlist1").show();

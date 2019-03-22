@@ -318,6 +318,8 @@ $("#media-playlist2").click(function(){
 
 
 $("#melos-button1").click(function(){
+  $("#media-row").hide();
+  $("#play-list-container").hide();
   $("#instructions-wrapper").fadeIn(1000);
   $("#melos-button1").hide(); //MELOS1 as default shows the instructions
   $("#melos-button2").show(); //MELOS2 as default shows the instructions
@@ -326,6 +328,7 @@ $("#melos-button1").click(function(){
   $("#media-playlist2").hide();
   $("#media-playlist1").show();
   $("#logo-wrapper").fadeOut(1000);
+  
 });
 
 $("#melos-button2").click(function(){

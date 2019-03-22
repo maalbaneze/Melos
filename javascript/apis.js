@@ -27,18 +27,18 @@ $(document).ready(function () {
 
   
 
-  // Get user input preferences on radio button select and store as variables
+  // //Get user input preferences on radio button select and store as variables
 
-    $('input:radio').change(function () {
-      console.log($(this).attr("name"))
-      var selection = $(this).attr("id")
-      console.log(selection)
+  //   $('input:radio').change(function () {
+  //     console.log($(this).attr("name"))
+  //     var selection = $(this).attr("id")
+  //     console.log(selection)
 
-      var musicChoice = $(selection).val("id")
-      var weatherPref = $(selection).val("id")
-      var mood = $(selection).val("id")
-      database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
-    });
+  //     var musicChoice = $(selection).val("id")
+  //     var weatherPref = $(selection).val("id")
+  //     var mood = $(selection).val("id")
+  //     database.ref().update({ musicChoice: [], weatherPref: [], mood: [] });
+  //   });
 
 // Obtain a user pic for sending to MS Azure facial recog API
 const player = document.getElementById('player');
@@ -105,7 +105,7 @@ function processImage() {
         "hair,makeup,occlusion,accessories,blur,exposure,noise"
   };
 
-  var sourceImageUrl = "https://firebasestorage.googleapis.com/v0/b/melos-71bca.appspot.com/o/image?alt=media&token=2e5e69ad-907a-4ff3-b249-4177bb19864f"
+  var sourceImageUrl = "http://vms.fnal.gov/stillphotos/2018/0000/18-0090-10.jpg"
   //===============AJAX Calls===========================//
   // Perform the REST API call.
   $.ajax({

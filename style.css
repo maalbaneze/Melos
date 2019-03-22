@@ -1,19 +1,21 @@
 /* changed the body css */
 
 body {
-    background-image: url("images/heavy-rain.jpg");
+    background-image: url("images/music2.jpg");
     background-repeat: repeat;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size: 100%;
     position: relative;
     overflow: auto;
     position: relative;
+    
 }
 
 /* changed the jumborton css -dennis*/
 .jumbotron { 
     font-family: 'Lato', sans-serif;
-    color: white;
+    color: rgb(99, 71, 71);
+    opacity: 0.90;
     height: 100px;
     padding: 0;
     width: 100%;
@@ -26,6 +28,8 @@ body {
 .logoName {
     font-family: Verdana, Tahoma, sans-serif; 
     color: white;
+    text-shadow:2px 2px #666;
+    opacity: 0.8;
     height: 150px;
     padding-top: 200px;
     width: 100%;
@@ -34,6 +38,7 @@ body {
 .logo-col {
     display: flex;
     justify-content: center;
+    opacity: 0.3;
 }
 
 #melos-button {
@@ -63,13 +68,16 @@ display: flex;
 justify-content: center;
 }
 
-/* 
-#logo-wrapper {
+
+
+
+/*#logo-wrapper {
     margin-left: 50px;
     width: 100%;
     font-family: 'Lato', sans-serif;
     font-size: 100px;
     position: absolute;
+    color: #666
     left: 0;
     top: 0;
 } */
@@ -78,6 +86,8 @@ justify-content: center;
 
     font-family: 'Lato', sans-serif;
     color: white;
+    
+    text-shadow:2px 2px #666;
     margin-top: 100px;
     margin-bottom: 180px;
 }
@@ -85,11 +95,13 @@ justify-content: center;
 .title-head {
     font-family: 'Lato', sans-serif;
     font-size: 8rem;
-    color: white;
+    color: rgb(255, 255, 251);
+    text-shadow:2px 2px #34495e;
 }
 .lead {
     font-family: 'Lato', sans-serif;
-    color: white;
+    color: rgb(255, 251, 251);
+    text-shadow:2px 2px #666;
 }
 
 .blockquote {
@@ -110,24 +122,32 @@ justify-content: center;
 
 
 /*background-color: rgb(193, 193, 215, 0.3);*/
-.card-background {
-    background-color: rgb(8, 8, 8, 0.2);;
+.card1-background {
+    background-color: rgb(8, 8, 8, 0.4);
     width: 250px;
     color: white;
+    text-shadow:2px 2px rgb(24, 22, 22);
     margin-top: 20px;
     font-family: 'Lato', sans-serif;
+    padding: 30px;
+    
   }
-  .card-background2 {
-    background-color: rgb(8, 8, 8, 0.2);;
+  .cont1 {
+      border-radius: 15px;
+  }
+  .card1-background2 {
+    background-color: rgb(8, 8, 8, 0.6);
     width: 300px;
     color: white;
+    text-shadow:2px 2px rgb(24, 22, 22);
     margin-top: 20px;
     
   }
-  .card-background5 {
-    background-color: rgb(8, 8, 8, 0.4);;
+  .card1-background5 {
+    background-color: rgb(8, 8, 8, 0.6);
     width: 100%;
     color: white;
+    text-shadow:2px 2px  rgb(24, 22, 22);
     margin-top: 20px;
     padding: 10px;
   }
@@ -138,11 +158,11 @@ justify-content: center;
 }
 
 .navContent {
-    background-color: rgb(8, 8, 8, 0.4);
+    background-color: rgb(8, 8, 8, 0.2);
 
 }
 
-    .card-wrap {
+    .card1-wrap {
     
         padding: 10px;
         width: 100%;
@@ -160,6 +180,7 @@ font-family: 'Roboto', sans-serif;
     background-color:  rgb(193, 193, 215, 0.2);
     border: 1px solid  rgb(193, 193, 215);
     font-family: 'Lato', sans-serif;
+    color: white;
 }
 
 #submitYourChoice {
@@ -177,8 +198,17 @@ font-family: 'Roboto', sans-serif;
 #melos-button {
     background-color: transparent;
     color:white;
+    text-shadow:2px 2px #666;
     border-style: none;
 
+}
+#melos-button1, #melos-button2{
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.camicon {
+    background-color: transparent;
 }
 
 .btn:focus {
@@ -451,7 +481,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -510,7 +540,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
    
@@ -566,7 +596,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -623,7 +653,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -682,7 +712,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
   
@@ -739,7 +769,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -797,7 +827,7 @@ overflow: auto;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     .blockquote{
@@ -855,7 +885,7 @@ width: 100%;
     #player{
         width: 100%;
     }
-    .card{
+    .cont1{
         width: 100%;
     }
     
@@ -910,7 +940,7 @@ strong{
 #player{
     width: 100%;
 }
-.card{
+.cont1{
     width: 100%;
 }
 .blockquote{
@@ -966,12 +996,22 @@ strong{
 #player{
     width: 100%;
 }
-.card{
+.cont1{
     width: 100%;
 }
  .blockquote{
        display: none;
    }
 
+<<<<<<< HEAD
 >>>>>>> master
 }
+=======
+}
+
+
+/* 
+replaced card to card1
+
+*/
+>>>>>>> master
